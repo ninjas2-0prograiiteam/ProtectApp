@@ -1,8 +1,4 @@
-<%-- 
-    Document   : EmpresaForm
-    Created on : 05-abr-2019, 16:05:18
-    Author     : HP PC
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
