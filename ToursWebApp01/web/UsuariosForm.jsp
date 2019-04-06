@@ -1,9 +1,3 @@
-<%-- 
-    Document   : UsuariosForm
-    Created on : 02-abr-2019, 16:41:35
-    Author     : HP PC
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
