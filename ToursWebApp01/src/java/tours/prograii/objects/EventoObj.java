@@ -5,26 +5,26 @@ public class EventoObj {
         private int m_iId;
         private int m_iIdEmpresa;
         private int m_iIdCategoria;
+        private int m_iIdDepartamento;
         private String m_strHoradeSalida;
         private String m_strFecha;
         private String m_strHoradeRetorno;
-        private int m_iIdUbicacion;
+        private String m_strPuntodeEncuentro;
         private int m_iPrecio;
 
-    public EventoObj(int p_iId, int p_iIdEmpresa, int p_iIdCategoria, String p_strHoradeSalida, 
-            String p_strFecha, String p_strHoradeRetorno, int p_iIdUbicacion, int p_iPrecio) {
+    public EventoObj(int p_iId, int p_iIdEmpresa, int p_iIdCategoria, int p_iIdDepartamento, String p_strHoradeSalida,
+            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio) {
         setId(p_iId);
         setIdEmpresa(p_iIdEmpresa);
         setIdCategoria(p_iIdCategoria);
+        setIdDepartamento(p_iIdDepartamento);
         setHoradeSalida(p_strHoradeSalida);
         setFecha(p_strFecha);
         setHoradeRetorno(p_strHoradeRetorno);
-        setIdUbicacion(p_iIdUbicacion);
+        setPuntodeEncuentro(p_strPuntodeEncuentro);
         setPrecio(p_iPrecio);
     }
         
-        
-
     public int getId() {
         return m_iId;
     }
@@ -49,6 +49,16 @@ public class EventoObj {
         m_iIdCategoria = p_iIdCategoria;
     }
 
+    public int getIdDepartamento() {
+        return m_iIdDepartamento;
+    }
+
+    private void setIdDepartamento(int p_iIdDepartamento) {
+        m_iIdDepartamento = p_iIdDepartamento;
+    }
+
+    
+    
     public String getHoradeSalida() {
         return m_strHoradeSalida;
     }
@@ -73,15 +83,13 @@ public class EventoObj {
         m_strHoradeRetorno = p_strHoradeRetorno;
     }
 
-    public int getIdUbicacion() {
-        return m_iIdUbicacion;
+    public String getPuntodeEncuentro() {
+        return m_strPuntodeEncuentro;
     }
 
-    private void setIdUbicacion(int p_iIdUbicacion) {
-        m_iIdUbicacion = p_iIdUbicacion;
+    private void setPuntodeEncuentro(String p_strPuntodeEncuentro) {
+        m_strPuntodeEncuentro = p_strPuntodeEncuentro;
     }
-
-   
 
     public int getPrecio() {
         return m_iPrecio;

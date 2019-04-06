@@ -9,11 +9,11 @@ public class UsuariosObj {
     private String m_strEmail;
     private String m_strUsername;
     private String m_strPassword;
-    private int m_iIdUbicacion;
+    private int m_iIdDepartamento;
 
 
     public UsuariosObj(int p_iId, String p_strNombre, String p_strApellido, int p_iEdad, int p_iDui, int p_iNit, 
-            String p_strEmail, String p_strUsername, String p_strPassword, int p_iIdUbicacion) {
+            String p_strEmail, String p_strUsername, String p_strPassword, int p_iIdDepartamento) {
         setId(p_iId);
         setNombre(p_strNombre);
         setApellido(p_strApellido);
@@ -23,11 +23,9 @@ public class UsuariosObj {
         setEmail(p_strEmail);
         setUsername(p_strUsername);
         setPassword(p_strPassword);
-        setIdUbicacion(p_iIdUbicacion);
+        setIdDepartamento(p_iIdDepartamento);
         
     }
-
-    
     
     public int getId() {
         return m_iId;
@@ -101,12 +99,12 @@ public class UsuariosObj {
         m_strPassword = p_strPassword;
     }
 
-    public int getIdUbicacion() {
-        return m_iIdUbicacion;
+    public int getIdDepartamento() {
+        return m_iIdDepartamento;
     }
 
-    private void setIdUbicacion(int p_iIdUbicacion) {
-        m_iIdUbicacion = p_iIdUbicacion;
+    private void setIdDepartamento(int p_iIdUbicacion) {
+        m_iIdDepartamento = p_iIdUbicacion;
     }
     
 }
