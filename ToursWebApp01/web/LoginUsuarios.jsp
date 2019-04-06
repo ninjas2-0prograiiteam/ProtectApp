@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : LoginUsuarios
+    Created on : 05-abr-2019, 18:54:34
+    Author     : HP PC
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Inciar sesión</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Iniciar sesión</title>
     </head>
     <body>
         <h1>Iniciar sesión</h1>
