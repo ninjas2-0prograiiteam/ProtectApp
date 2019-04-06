@@ -151,11 +151,11 @@ CREATE TABLE `evento` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idempresa` int(11) NOT NULL,
   `idcategoria` int(11) NOT NULL,
-  `idubicacion` int(11) NOT NULL,
-  `hora de salida` varchar(45) NOT NULL,
+  `iddepartamento` int(11) NOT NULL,
+  `horadesalida` varchar(45) NOT NULL,
   `fecha` varchar(45) NOT NULL,
-  `hora de retorno` varchar(45) NOT NULL,
-  `precio` int(11) NOT NULL,
+  `horaderetorno` varchar(45) NOT NULL,
+  `puntodeencuentro` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -167,29 +167,6 @@ CREATE TABLE `evento` (
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `municipios`
---
-
-DROP TABLE IF EXISTS `municipios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `municipios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `municipios`
---
-
-LOCK TABLES `municipios` WRITE;
-/*!40000 ALTER TABLE `municipios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `municipios` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -219,31 +196,6 @@ LOCK TABLES `pago` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `ubicacion`
---
-
-DROP TABLE IF EXISTS `ubicacion`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `ubicacion` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idmunicipio` int(11) NOT NULL,
-  `iddepartamento` int(11) NOT NULL,
-  `destino` varchar(300) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ubicacion`
---
-
-LOCK TABLES `ubicacion` WRITE;
-/*!40000 ALTER TABLE `ubicacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ubicacion` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `usuarios`
 --
 
@@ -260,7 +212,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(100) NOT NULL,
   `username` varchar(85) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `idubicacion` int(11) NOT NULL,
+  `iddepartamento` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -291,4 +243,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-05 18:58:20
+-- Dump completed on 2019-04-05 19:33:11
