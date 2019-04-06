@@ -16,7 +16,7 @@
             <input type="text" id="contras" name="contras"/>
             <br><br>
             
-            <input type="submit" id="mysubmit" name="mysubmit" value="Ingrsar"/>
+            <input type="submit" id="mysubmit" name="mysubmit" value="Ingresar"/>
         </form>
     </body>
 </html>
