@@ -15,40 +15,42 @@
         <h1>Registro de empresa</h1>
         <h2>Por favor ingrese los datos de su empresa</h2>
         
-        <form>
+        <form id="myform" name="myform" ation="EmpresaServlet" method="get"> 
             <label>Nombre de la empresa:</label><br>
-            <input type="text" id="nombree" name="nombree"/>
+            <input type="text" id="nombre" name="nombre"/>
             <br><br>
             
             <label>Email de la empresa:</label><br>
-            <input type="text" id="emaile" name="emaile"/>
+            <input type="text" id="email" name="email"/>
             <br><br>
             
             <label>Teléfono de la empresa:</label><br>
-            <input type="number" id="telefonoe" name="telefonoe"/>
+            <input type="number" id="telefono" name="telefono"/>
             <br><br>
             
             <label>NIT de la empresa:</label><br>
-            <input type="number" id="nite" name="nite"/>
+            <input type="number" id="nit" name="nit"/>
             <br><br>
             
             <label>Nombre de usuario para la empresa:</label><br>
-            <input type="text" id="usere" name="usere"/>
+            <input type="text" id="username" name="username"/>
             <br><br>
             
-            <label>Contaseña:</label><br>
-            <input type="text" id="contra" name="contra"/>
+            <label>Contraseña:</label><br>
+            <input type="text" id="password" name="password"/>
             <br><br>
             
-            <label>Confirme contraseña:</label><br>
+            <%--<label>Confirme contraseña:</label><br>
             <input type="text" id="contracon" name="contracon"/>
             <br><br>
+            --%>
             
             <label>Número de cuenta de la empresa:</label><br>
-            <input type="number" id="numerodecuenta" name="numerodecuenta"/>
+            <input type="number" id="nodecuenta" name="nodecuenta"/>
             <br><br>
             
              <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>
+              <input type="hidden" id="formid" name="formid" value="1" />
         </form>
     </body>
 </html>
