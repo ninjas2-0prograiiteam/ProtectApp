@@ -47,11 +47,7 @@
             <br><br>
             
             <label>Departamento:</label><br>
-            <input type="text" id="departamento" name="departamento"/>
-            <br><br>
-            
-            <label>Municipio:</label><br>
-            <input type="text" id="municipio" name="municipio"/>
+            <input type="number" id="departamento" name="departamento"/>
             <br><br>
             
             <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>

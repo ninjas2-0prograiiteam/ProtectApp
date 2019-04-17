@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tours.prograii.logic.UsuariosLogic;
 
 @WebServlet(name = "UsuariosServlet", urlPatterns = {"/UsuariosServlet"})
 public class UsuariosServlet extends HttpServlet {
@@ -18,17 +19,29 @@ public class UsuariosServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) 
         {
-
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UsuariosServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UsuariosServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+            String strFormId = request.getParameter("formid");
+            
+            if(strFormId.equals("1")){
+                String strNombre = request.getParameter("nombre");
+                String strApellido = request.getParameter("apellido");
+                String strEdad = request.getParameter("edad");
+                String strDui = request.getParameter("dui");
+                String strNit = request.getParameter("nit");
+                String strEmail = request.getParameter("email");
+                String strUsername = request.getParameter("user");
+                String strPassword = request.getParameter("contra");
+                String strIdDepartamento = request.getParameter("departamento");
+                int iEdad = Integer.parseInt(strEdad);
+                int iDui = Integer.parseInt(strDui);
+                int iNit = Integer.parseInt(strNit);
+                int iIdDepartamento = Integer.parseInt(strIdDepartamento);
+                
+                UsuariosLogic ULogic = new UsuariosLogic();
+                int iRows = ULogic.RegistrarNuevoUsuarioInt
+                (strNombre, strApellido, iEdad, iDui, iNit, strEmail, strUsername, strPassword, iIdDepartamento);
+                 System.out.println("inser client rows: " + iRows);
+            }
+                }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
