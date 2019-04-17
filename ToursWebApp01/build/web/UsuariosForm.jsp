@@ -9,7 +9,7 @@
         <h1>Registro de usuarios</h1>
         <h2>Por favor ingrese sus datos</h2>
         
-        <form>
+        <form id="myform" name="myform" action="UsuariosServlet" method="get">
             <label>Nombre:</label><br>
             <input type="text" id="nombre" name="nombre"/>
             <br><br>
@@ -55,6 +55,7 @@
             <br><br>
             
             <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>
+            <input type="hidden" id="formid" name="formid" value="1"
         </form>
     </body>
 </html>
