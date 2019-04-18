@@ -1,6 +1,11 @@
 package tours.prograii.logic;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import tours.prograii.database.DatabaseX;
+import tours.prograii.objects.UsuariosObj;
 
 public class UsuariosLogic extends Logic {
 
@@ -54,4 +59,54 @@ public class UsuariosLogic extends Logic {
            int iRows = database.executeNonQueryRows(strSql);
            return iRows;
         }
+        
+        public UsuariosObj getClientById(int p_iId) 
+    {
+        //select * from travelsys.client;
+        DatabaseX database = getDatabase();
+        String strSql = "select * from tourdatabase.usuarios where id="+p_iId+" ";
+        System.out.println(strSql);
+        ResultSet CResult = database.executeQuery(strSql);
+        UsuariosObj CTemp = null;
+        
+        if(CResult!=null)
+        {
+            int iId;
+            String strNombre;
+            String strApellido;
+            int iEdad;
+            int iDui;
+            int iNit;
+            String strEmail;
+            String strUsername;
+            String strPassword;
+            int iIdDepartamento;
+            
+            try 
+            {
+                while(CResult.next())
+                {
+                    iId = CResult.getInt("id");
+                    strNombre = CResult.getString("nombre");
+                    strApellido = CResult.getString("apellido");
+                    iEdad = CResult.getInt("edad");
+                    iDui = CResult.getInt("dui");
+                    iNit = CResult.getInt("nit");
+                    strEmail = CResult.getString("email");
+                    strUsername = CResult.getString("user");
+                    strPassword = CResult.getString("contra");
+                    iIdDepartamento = CResult.getInt("departamento");
+                    
+                    CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui, iNit,strEmail, strUsername, strPassword, iIdDepartamento);
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(UsuariosLogic.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return CTemp;
+        
+    }
 }

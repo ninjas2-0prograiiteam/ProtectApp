@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tours.prograii.logic.UsuariosLogic;
+import tours.prograii.objects.UsuariosObj;
 
 @WebServlet(name = "UsuariosServlet", urlPatterns = {"/UsuariosServlet"})
 public class UsuariosServlet extends HttpServlet {
@@ -52,6 +53,41 @@ public class UsuariosServlet extends HttpServlet {
                 
                 UsuariosLogic ULogic = new UsuariosLogic();
                 int iRows = ULogic.BorrarUsuario(iId);
+            }
+            
+            if(strFormId.equals("3")){
+                String strId = request.getParameter("id");
+                int iId = Integer.parseInt(strId);
+                
+                UsuariosLogic ULogic = new UsuariosLogic();
+                UsuariosObj UObj = ULogic.getClientById(iId);
+                
+                request.getSession().setAttribute("usuarios", UObj);
+                response.sendRedirect("usuariosUpdateForm.jsp");
+            }
+            
+            if(strFormId.equals("4")){
+               String strNombre = request.getParameter("nombre");
+                String strApellido = request.getParameter("apellido");
+                String strEdad = request.getParameter("edad");
+                String strDui = request.getParameter("dui");
+                String strNit = request.getParameter("nit");
+                String strEmail = request.getParameter("email");
+                String strUsername = request.getParameter("user");
+                String strPassword = request.getParameter("contra");
+                String strIdDepartamento = request.getParameter("departamento");
+                int iEdad = Integer.parseInt(strEdad);
+                int iDui = Integer.parseInt(strDui);
+                int iNit = Integer.parseInt(strNit);
+                int iIdDepartamento = Integer.parseInt(strIdDepartamento);
+                
+                UsuariosLogic ULogic = new UsuariosLogic();
+                int iRows = ULogic.ActualizarUsuario(iNit, strNombre, strApellido, iEdad, iDui, iNit, strEmail, strUsername, strPassword, iIdDepartamento) ;
+                System.out.println("update client rows: " + iRows);
+                
+                request.getSession().setAttribute("rows", iRows);
+                response.sendRedirect("genericMessage.jsp");
+                
             }
                 }
     }
