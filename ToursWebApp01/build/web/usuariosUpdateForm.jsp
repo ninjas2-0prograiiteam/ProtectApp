@@ -4,12 +4,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="Scripts/jquery-3.3.1.js" type="text/javascript"></script>
+        <script src="Scripts/jquery.validate.js" type="text/javascript"></script>
+        <script src="Scripts/additional-methods.js" type="text/javascript"></script>
+        <script src="Scripts/UsuariosFormScript.js" type="text/javascript"></script>
         <title>Actualización de datos</title>
     </head>
     <%
         UsuariosObj UObj = 
                 (UsuariosObj)request.getSession().getAttribute("usuarios");
-        
     %>
     <body>
         <h1>Actualización de datos</h1>
@@ -34,10 +37,6 @@
             
             <label>DUI:</label><br>
             <input type="number" id="dui" name="dui" value="<%= UObj.getDui() %>"/>
-            <br><br>
-            
-            <label>NIT:</label><br>
-            <input type="number" id="nit" name="nit" value="<%= UObj.getNit() %>"/>
             <br><br>
             
             <label>Email:</label><br>

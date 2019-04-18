@@ -1,3 +1,7 @@
+<%@page import="tours.prograii.objects.DepartamentosObj"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="tours.prograii.objects.UsuariosObj"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,6 +13,7 @@
         <script src="Scripts/UsuariosFormScript.js" type="text/javascript"></script>
         <title>Registro de usuarios</title>
     </head>
+       
     <body>
         <h1>Registro de usuarios</h1>
         <h2>Por favor ingrese sus datos</h2>
@@ -48,7 +53,8 @@
             
             <label>Departamento:</label><br>
             <input type="number" id="departamento" name="departamento"/>
-            <br><br>
+            </select>
+
             
             <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>
             <input type="hidden" id="formid" name="formid" value="1"/>
