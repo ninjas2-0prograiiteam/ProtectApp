@@ -9,13 +9,13 @@ $(document).ready(function(){
             },
             dui: {
                 required: true,
-                min:9,
-                max:9
+                min:100000000,
+                max:999999999
             },
             nit:{
                 required: true,
-                min:14,
-                max:14   
+                min:10000000000000,
+                max:19999999999999   
             },
             
             email: "required",
