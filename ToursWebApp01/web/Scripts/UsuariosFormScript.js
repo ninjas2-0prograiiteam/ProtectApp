@@ -45,7 +45,13 @@ $(document).ready(function(){
             contra:{
                 required: "Ingrese una contraseña",
                 minlength: "Su contraseña debe tener al menos 5 caracteres"
-            }
+            },
+            contracon:{
+                required: "Ingrese su contraseña",
+                minlength:"Su contraseña debe tener al menos 5 caracteres",
+                equalTo: "Las contraseñas no coinciden"
+            },
+            departamento: "Ingrese el departamento al que pertence"
         }
         });
         
