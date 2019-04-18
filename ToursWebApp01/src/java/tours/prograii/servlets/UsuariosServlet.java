@@ -28,19 +28,17 @@ public class UsuariosServlet extends HttpServlet {
                 String strApellido = request.getParameter("apellido");
                 String strEdad = request.getParameter("edad");
                 String strDui = request.getParameter("dui");
-                String strNit = request.getParameter("nit");
                 String strEmail = request.getParameter("email");
                 String strUsername = request.getParameter("user");
                 String strPassword = request.getParameter("contra");
                 String strIdDepartamento = request.getParameter("departamento");
                 int iEdad = Integer.parseInt(strEdad);
                 int iDui = Integer.parseInt(strDui);
-                int iNit = Integer.parseInt(strNit);
                 int iIdDepartamento = Integer.parseInt(strIdDepartamento);
                 
                 UsuariosLogic ULogic = new UsuariosLogic();
                 int iRows = ULogic.RegistrarNuevoUsuarioInt
-                (strNombre, strApellido, iEdad, iDui, iNit, strEmail, strUsername, strPassword, iIdDepartamento);
+                (strNombre, strApellido, iEdad, iDui, strEmail, strUsername, strPassword, iIdDepartamento);
                  System.out.println("inser client rows: " + iRows);
                  
                 request.getSession().setAttribute("rows", iRows);
@@ -67,22 +65,22 @@ public class UsuariosServlet extends HttpServlet {
             }
             
             if(strFormId.equals("4")){
+                String strId = request.getParameter("id");
                String strNombre = request.getParameter("nombre");
                 String strApellido = request.getParameter("apellido");
                 String strEdad = request.getParameter("edad");
                 String strDui = request.getParameter("dui");
-                String strNit = request.getParameter("nit");
                 String strEmail = request.getParameter("email");
                 String strUsername = request.getParameter("user");
                 String strPassword = request.getParameter("contra");
                 String strIdDepartamento = request.getParameter("departamento");
                 int iEdad = Integer.parseInt(strEdad);
                 int iDui = Integer.parseInt(strDui);
-                int iNit = Integer.parseInt(strNit);
+                int iId = Integer.parseInt(strId);
                 int iIdDepartamento = Integer.parseInt(strIdDepartamento);
                 
                 UsuariosLogic ULogic = new UsuariosLogic();
-                int iRows = ULogic.ActualizarUsuario(iNit, strNombre, strApellido, iEdad, iDui, iNit, strEmail, strUsername, strPassword, iIdDepartamento) ;
+                int iRows = ULogic.ActualizarUsuario(iId, strNombre, strApellido, iEdad, iDui, strEmail, strUsername, strPassword, iIdDepartamento) ;
                 System.out.println("update client rows: " + iRows);
                 
                 request.getSession().setAttribute("rows", iRows);

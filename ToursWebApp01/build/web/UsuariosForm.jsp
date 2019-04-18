@@ -30,12 +30,8 @@
             <input type="number" id="dui" name="dui"/>
             <br><br>
             
-            <label>NIT:</label><br>
-            <input type="number" id="nit" name="nit"/>
-            <br><br>
-            
             <label>Email:</label><br>
-            <input type="text" id="email" name="email"/>
+            <input type="email" id="email" name="email"/>
             <br><br>
             
             <label>Nombre de usuario:</label><br>
@@ -43,11 +39,11 @@
             <br><br>
             
             <label>Contaseña:</label><br>
-            <input type="text" id="contra" name="contra"/>
+            <input type="password" id="contra" name="contra"/>
             <br><br>
             
             <label>Confirme contraseña:</label><br>
-            <input type="text" id="contracon" name="contracon"/>
+            <input type="password" id="contracon" name="contracon"/>
             <br><br>
             
             <label>Departamento:</label><br>

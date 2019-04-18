@@ -9,23 +9,23 @@ import tours.prograii.objects.UsuariosObj;
 
 public class UsuariosLogic extends Logic {
 
-    public boolean RegistrarNuevoUsuario(String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,int p_iNit,
+    public boolean RegistrarNuevoUsuario(String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,
             String p_strEmail,String p_strUsername, String p_strPassword,int p_iIdDepartamento){
         DatabaseX database = getDatabase();
         String strSql = "INSERT INTO tourdatabase.usuarios"
                         + "(id,nombre,apellido,edad,dui,nit,email,username,password,iddepartamento)" +
-                        "VALUES(0,'"+p_strNombre+"','"+p_strApellido+"',"+p_iEdad+","+p_iDui+","+p_iNit+",'"+p_strEmail+"',"
+                        "VALUES(0,'"+p_strNombre+"','"+p_strApellido+"',"+p_iEdad+","+p_iDui+",'"+p_strEmail+"',"
                         + "'"+p_strUsername+"','"+p_strPassword+"',"+p_iIdDepartamento+");";
         boolean bsucces = database.executeNonQueryBool(strSql);
        return bsucces;
     }
     
-    public int RegistrarNuevoUsuarioInt(String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,int p_iNit,
+    public int RegistrarNuevoUsuarioInt(String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,
             String p_strEmail,String p_strUsername, String p_strPassword,int p_iIdDepartamento){
         DatabaseX database = getDatabase();
         String strSql = "INSERT INTO tourdatabase.usuarios"
                         + "(id,nombre,apellido,edad,dui,nit,email,username,password,iddepartamento)" +
-                        "VALUES(0,'"+p_strNombre+"','"+p_strApellido+"',"+p_iEdad+","+p_iDui+","+p_iNit+",'"+p_strEmail+"',"
+                        "VALUES(0,'"+p_strNombre+"','"+p_strApellido+"',"+p_iEdad+","+p_iDui+",'"+p_strEmail+"',"
                         + "'"+p_strUsername+"','"+p_strPassword+"',"+p_iIdDepartamento+");";
         int iRows = database.executeNonQueryRows(strSql);
         return iRows;
@@ -40,7 +40,7 @@ public class UsuariosLogic extends Logic {
         return iRows;
     }
         
-        public int ActualizarUsuario(int p_iId,String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,int p_iNit,
+        public int ActualizarUsuario(int p_iId,String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,
             String p_strEmail,String p_strUsername, String p_strPassword,int p_iIdDepartamento){
            DatabaseX database = getDatabase(); 
            String strSql = "UPDATE tourdatabase.usuarios" +
@@ -50,7 +50,6 @@ public class UsuariosLogic extends Logic {
                            "apellido = '"+p_strApellido+"'," +
                            "edad = "+p_iEdad+"," +
                            "dui = "+p_iDui+"," +
-                           "nit = "+p_iNit+"," +
                            "email = '"+p_strEmail+"'," +
                            "username ='"+p_strUsername+"'," +
                            "password = '"+p_strPassword+"'," +
@@ -76,7 +75,6 @@ public class UsuariosLogic extends Logic {
             String strApellido;
             int iEdad;
             int iDui;
-            int iNit;
             String strEmail;
             String strUsername;
             String strPassword;
@@ -91,13 +89,12 @@ public class UsuariosLogic extends Logic {
                     strApellido = CResult.getString("apellido");
                     iEdad = CResult.getInt("edad");
                     iDui = CResult.getInt("dui");
-                    iNit = CResult.getInt("nit");
                     strEmail = CResult.getString("email");
                     strUsername = CResult.getString("user");
                     strPassword = CResult.getString("contra");
                     iIdDepartamento = CResult.getInt("departamento");
                     
-                    CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui, iNit,strEmail, strUsername, strPassword, iIdDepartamento);
+                    CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui,strEmail, strUsername, strPassword, iIdDepartamento);
                 }
             } 
             catch (SQLException ex) 
