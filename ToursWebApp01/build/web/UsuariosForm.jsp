@@ -51,7 +51,7 @@
             <br><br>
             
             <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>
-            <input type="hidden" id="formid" name="formid" value="1"
+            <input type="hidden" id="formid" name="formid" value="1"/>
         </form>
     </body>
 </html>

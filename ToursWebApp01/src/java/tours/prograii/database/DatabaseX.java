@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class DatabaseX {
  //variables de clase
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/esenhotel"
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/tourdatabase"
                 + "?autoReconnect=true"
                 + "&useUnicode=true"
                 + "&useSSL=false"

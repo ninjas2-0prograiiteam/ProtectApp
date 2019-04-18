@@ -21,7 +21,8 @@ public class UsuariosServlet extends HttpServlet {
         {
             String strFormId = request.getParameter("formid");
             
-            if(strFormId.equals("1")){
+            if(strFormId.equals("1"))
+            {
                 String strNombre = request.getParameter("nombre");
                 String strApellido = request.getParameter("apellido");
                 String strEdad = request.getParameter("edad");
@@ -40,6 +41,17 @@ public class UsuariosServlet extends HttpServlet {
                 int iRows = ULogic.RegistrarNuevoUsuarioInt
                 (strNombre, strApellido, iEdad, iDui, iNit, strEmail, strUsername, strPassword, iIdDepartamento);
                  System.out.println("inser client rows: " + iRows);
+                 
+                request.getSession().setAttribute("rows", iRows);
+                response.sendRedirect("genericMessage.jsp");
+            }
+            
+            if(strFormId.equals("2")){
+                String strId = request.getParameter("id");
+                int iId = Integer.parseInt(strId);
+                
+                UsuariosLogic ULogic = new UsuariosLogic();
+                int iRows = ULogic.BorrarUsuario(iId);
             }
                 }
     }
