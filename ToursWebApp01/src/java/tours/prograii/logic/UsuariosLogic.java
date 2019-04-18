@@ -13,7 +13,7 @@ public class UsuariosLogic extends Logic {
             String p_strEmail,String p_strUsername, String p_strPassword,int p_iIdDepartamento){
         DatabaseX database = getDatabase();
         String strSql = "INSERT INTO tourdatabase.usuarios"
-                        + "(id,nombre,apellido,edad,dui,nit,email,username,password,iddepartamento)" +
+                        + "(id,nombre,apellido,edad,dui,email,username,password,iddepartamento)" +
                         "VALUES(0,'"+p_strNombre+"','"+p_strApellido+"',"+p_iEdad+","+p_iDui+",'"+p_strEmail+"',"
                         + "'"+p_strUsername+"','"+p_strPassword+"',"+p_iIdDepartamento+");";
         boolean bsucces = database.executeNonQueryBool(strSql);
@@ -24,7 +24,7 @@ public class UsuariosLogic extends Logic {
             String p_strEmail,String p_strUsername, String p_strPassword,int p_iIdDepartamento){
         DatabaseX database = getDatabase();
         String strSql = "INSERT INTO tourdatabase.usuarios"
-                        + "(id,nombre,apellido,edad,dui,nit,email,username,password,iddepartamento)" +
+                        + "(id,nombre,apellido,edad,dui,email,username,password,iddepartamento)" +
                         "VALUES(0,'"+p_strNombre+"','"+p_strApellido+"',"+p_iEdad+","+p_iDui+",'"+p_strEmail+"',"
                         + "'"+p_strUsername+"','"+p_strPassword+"',"+p_iIdDepartamento+");";
         int iRows = database.executeNonQueryRows(strSql);

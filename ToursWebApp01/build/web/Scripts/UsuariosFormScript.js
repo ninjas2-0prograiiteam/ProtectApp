@@ -27,6 +27,25 @@ $(document).ready(function(){
                 equalTo: "#contra"
             },
             departamento: "required"
+        },
+        messages: {
+            nombre: "Por facor ingrese su nombre",
+            apellido:"Por favor ingrese su apellido",
+            edad: {
+                required: "Ingrese su edad por favor",
+                min: "Debe tener al menos 18 años para utilizar nuestra aplicación"
+            },
+            dui:{
+                required: "Ingrese su número de DUI",
+                minlength: "Ingrese un número de DUI válido",
+                maxlength: "Ingrese un número de DUI válido"
+            },
+            email: "Ingrese su email por favor",
+            user: "Ingrese su nombre de usuario",
+            contra:{
+                required: "Ingrese una contraseña",
+                minlength: "Su contraseña debe tener al menos 5 caracteres"
+            }
         }
         });
         
