@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `tourdatabase` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+USE `tourdatabase`;
 -- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tourdatabase
@@ -209,13 +211,12 @@ CREATE TABLE `usuarios` (
   `apellido` varchar(100) NOT NULL,
   `edad` int(11) NOT NULL,
   `dui` int(11) NOT NULL,
-  `nit` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `username` varchar(85) NOT NULL,
   `password` varchar(45) NOT NULL,
   `iddepartamento` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,4 +245,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-05 19:48:50
+-- Dump completed on 2019-04-18 12:48:43
