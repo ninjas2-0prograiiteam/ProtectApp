@@ -18,14 +18,18 @@ $(document).ready(function(){
                 max:19999999999999   
             },
             
-            email: "required",
+            email: {
+                required: true  
+            },
             user: "required",
             contra : "required",
             contracon: "required",
             departamento: "required"
         }
         });
-$(document).ready(function ValidateEmail(email) 
+        
+          });
+/*$(document).ready(function ValidateEmail(email) 
 {
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
   {
@@ -33,7 +37,7 @@ $(document).ready(function ValidateEmail(email)
   }
     alert("Has ingresado un email invalido");
     return (false);
-});
+});*/
 
 $(document).ready(function allLetter(name)
   {
@@ -49,7 +53,7 @@ $(document).ready(function allLetter(name)
      }
   });
   
-  $(document).ready(function allLetter(apellido)
+$(document).ready(function allLetter(apellido)
   {
    var letters = /^[A-Za-z]+$/;
    if(apellido.value.match(letters))
@@ -63,9 +67,9 @@ $(document).ready(function allLetter(name)
      }
   });
   
-  $(document).ready(function ValidateSamePassword(contracon)
+$(document).ready(function ValidateSamePassword(contracon)
   {
-      var contra = contra;
+      var contra = document.getElementById("contra");
    if(contracon.value.match(contra))
      {
       return true;
@@ -90,5 +94,13 @@ alert("Ingrese una contraseña valida");
 return false;
 }
 });
-        });
+
+$(document).ready(function validarEmail(email) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)){
+return true;
+  } else {
+   alert("La dirección de email es incorrecta.");
+  }
+});
+      
 
