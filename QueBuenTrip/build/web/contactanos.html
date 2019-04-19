@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body style="background: #FFE01F">
+
+<h2>Contáctanos</h2>
+
+<div class="container">
+  <form action="respuestacomentario.html" >
+    <label for="fname">Nombre</label>
+    <input type="text" id="fname" name="firstname" placeholder="Mi nombre es...">
+
+    <label for="lname">Apellido</label>
+    <input type="text" id="lname" name="lastname" placeholder="Mi apellido es...">
+    
+    <label for="country">País</label>
+    <input type="text" id="country" name="country" placeholder="">
+
+    <label for="country">Departamento</label>
+    <select id="departamento" name="departamento">
+      <option value="Ahuachapán">Ahuachapán</option>
+      <option value="Cabañas">Cabañas</option>
+      <option value="Chalatenango">Chalatenango</option>
+      <option value="Cuscatlán">Cuscatlán</option>
+      <option value="La Libertad">La Libertad</option>
+      <option value="La Paz">La Paz</option>
+      <option value="La Unión">La Unión</option>
+      <option value="Morazán">Morazán</option>
+      <option value="San Miguel">San Miguel</option>
+      <option value="San Salvador">San Salvador</option>
+      <option value="San Vicente">San Vicente</option>
+      <option value="Sant Ana">Santa Ana</option>
+      <option value="Sonsonate">Sonsonate</option>
+      <option value="Usulután">Usulután</option>
+      <option value="extranjero">Extranjero</option>     
+    </select>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="ejemplo@gmail.com">
+    <label for="subject">Comentario</label>
+    <textarea id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" style="height:200px"></textarea>
+    <p>Cuando veamos tu comentario, nos pondremos en contacto contigo rápidamente.</p>
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+</body>
+</html>
