@@ -54,7 +54,7 @@
             <input type="password" id="contracon" name="contracon"/>
             <br><br>
 
-            <label>Departamento:</label><br>>
+            <label>Departamento:</label><br>
             <select id="departamento" name="departamento">
                 <option id="departamento0" name="departamento0" value="0"></option>                
                 <%

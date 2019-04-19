@@ -15,24 +15,20 @@
     </head>
     <%
         UsuariosObj UObj = 
-                (UsuariosObj)request.getSession().getAttribute("usuarios");
+                (UsuariosObj)request.getSession().getAttribute("users");
         
-ArrayList<DepartamentosObj> CDepArray = 
-                (ArrayList<DepartamentosObj>)request.getSession().getAttribute("departamentos");
-        Iterator<DepartamentosObj> iteDepArray = CDepArray.iterator();
     %>
     <body>
         <h1>Actualización de datos</h1>
         <br><br>
         <form id="myform" name="myform" action="UsuariosServlet" method="get">
-            
             <label>Id:</label><br>
             <input type="number" id="nonId" name="nonId" value="<%= UObj.getId() %>" disabled/>
             <br><br>
             
             <label>Nombre:</label><br>
             <input type="text" id="nombre" name="nombre" value="<%= UObj.getNombre() %>"/>
-            <br><br>
+            <br><br>bj
             
             <label>Apellido:</label><br>
             <input type="text" id="apellido" name="apellido" value="<%= UObj.getApellido() %>"/>
@@ -47,7 +43,7 @@ ArrayList<DepartamentosObj> CDepArray =
             <br><br>
             
             <label>Email:</label><br>
-            <input type="text" id="email" name="email" value="<%= UObj.getEmail() %>"/>
+            <input type="email" id="email" name="email" value="<%= UObj.getEmail() %>"/>
             <br><br>
             
             <label>Nombre de usuario:</label><br>
@@ -55,36 +51,20 @@ ArrayList<DepartamentosObj> CDepArray =
             <br><br>
             
             <label>Contaseña:</label><br>
-            <input type="text" id="contra" name="contra" value="<%= UObj.getPassword() %>"/>
+            <input type="password" id="contra" name="contra" value="<%= UObj.getPassword() %>"/>
             <br><br>
             
             <label>Confirme contraseña:</label><br>
-            <input type="text" id="contracon" name="contracon"/>
+            <input type="password" id="contracon" name="contracon" />
             <br><br>
-            
-            <label>Departamento:</label><br>>
-            <select id="departamento" name="departamento" value="<%= UObj.getIdDepartamento()%>">
-                <option id="departamento0" name="departamento0" value="0"></option>                
-                <%
-                    if(iteDepArray!=null)
-                    {
-                        DepartamentosObj CDepTemp;
-                        while(iteDepArray.hasNext())
-                        {
-                            CDepTemp = iteDepArray.next();
-                %>
-                            <option id="departamento<%= CDepTemp.getId() %>" 
-                                    name="departamento<%= CDepTemp.getId() %>" 
-                                    value="<%= CDepTemp.getId() %>">
-                                <%= CDepTemp.getNombre()%>
-                            </option>
-                <%
-                        }
-                    }
-                %>
+
+            <label>Departamento:</label><br>
+            <input type="number" id="departamento" name="departamento" value="<%= UObj.getIdDepartamento() %>"/>
+            <br><br>
             
             <input type="submit" id="mysubmit" name="mysubmmit" value="Actualizar"/>
             <input type="hidden" id="formid" name="formid" value="4"/>
+            <input type="hidden" id="id" name="id" value="<%= UObj.getId() %>" />
         </form>
     </body>
 </html>

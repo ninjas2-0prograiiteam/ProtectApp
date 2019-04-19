@@ -35,32 +35,34 @@ public class UsuariosLogic extends Logic {
         public int BorrarUsuario(int p_iId) 
     {
         DatabaseX database = getDatabase();
-        String strSql = "DELETE FROM tourdatabase.usuarios" +
+        String strSql = "DELETE FROM tourdatabase.usuarios " +
                         "WHERE id="+p_iId+";";
         int iRows = database.executeNonQueryRows(strSql);
         return iRows;
     }
         
+        
         public int ActualizarUsuario(int p_iId,String p_strNombre,String p_strApellido,int p_iEdad,int p_iDui,
             String p_strEmail,String p_strUsername, String p_strPassword,int p_iIdDepartamento){
            DatabaseX database = getDatabase(); 
-           String strSql = "UPDATE tourdatabase.usuarios" +
-                           "SET" +
-                           "id = "+p_iId+"," +
-                           "nombre = '"+p_strNombre+"'," +
-                           "apellido = '"+p_strApellido+"'," +
-                           "edad = "+p_iEdad+"," +
-                           "dui = "+p_iDui+"," +
-                           "email = '"+p_strEmail+"'," +
-                           "username ='"+p_strUsername+"'," +
-                           "password = '"+p_strPassword+"'," +
-                           "iddepartamento = "+p_iIdDepartamento+"" +
-                           "WHERE id = "+p_iId+";";
+           String strSql = "UPDATE tourdatabase.usuarios " +
+                            "SET " +
+                            "id = "+p_iId+"," +
+                            "nombre = '"+p_strNombre+"', "+
+                            "apellido = '"+p_strApellido+"'," +
+                            "edad = "+p_iEdad+"," +
+                            "dui = "+p_iDui+"," +
+                            "email = '"+p_strEmail+"'," +
+                            "username = '"+p_strUsername+"'," +
+                            "password = '"+p_strPassword+"'," +
+                            "iddepartamento = "+p_iIdDepartamento+" " +
+                            "WHERE id = "+p_iId+";";
+           System.out.println(strSql);
            int iRows = database.executeNonQueryRows(strSql);
            return iRows;
         }
-        
-        public UsuariosObj getClientById(int p_iId) 
+
+        public UsuariosObj getUsersById(int p_iId) 
     {
         //select * from travelsys.client;
         DatabaseX database = getDatabase();
@@ -91,9 +93,9 @@ public class UsuariosLogic extends Logic {
                     iEdad = CResult.getInt("edad");
                     iDui = CResult.getInt("dui");
                     strEmail = CResult.getString("email");
-                    strUsername = CResult.getString("user");
-                    strPassword = CResult.getString("contra");
-                    iIdDepartamento = CResult.getInt("departamento");
+                    strUsername = CResult.getString("username");
+                    strPassword = CResult.getString("password");
+                    iIdDepartamento = CResult.getInt("iddepartamento");
                     
                     CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui,strEmail, strUsername, strPassword, iIdDepartamento);
                 }
@@ -142,9 +144,9 @@ public class UsuariosLogic extends Logic {
                     iEdad = CResult.getInt("edad");
                     iDui = CResult.getInt("dui");
                     strEmail = CResult.getString("email");
-                    strUsername = CResult.getString("user");
-                    strPassword = CResult.getString("contra");
-                    iIdDepartamento = CResult.getInt("departamento");
+                    strUsername = CResult.getString("username");
+                    strPassword = CResult.getString("password");
+                    iIdDepartamento = CResult.getInt("iddepartamento");
                     
                     CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui,strEmail, strUsername, strPassword, iIdDepartamento);
                     CArray.add(CTemp);

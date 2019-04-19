@@ -52,6 +52,9 @@ public class UsuariosServlet extends HttpServlet {
                 
                 UsuariosLogic ULogic = new UsuariosLogic();
                 int iRows = ULogic.BorrarUsuario(iId);
+                
+                request.getSession().setAttribute("rows", iRows);
+                response.sendRedirect("genericMessage.jsp");
             }
             
             if(strFormId.equals("3")){
@@ -59,9 +62,9 @@ public class UsuariosServlet extends HttpServlet {
                 int iId = Integer.parseInt(strId);
                 
                 UsuariosLogic ULogic = new UsuariosLogic();
-                UsuariosObj UObj = ULogic.getClientById(iId);
+                UsuariosObj UObj = ULogic.getUsersById(iId);
                 
-                request.getSession().setAttribute("usuarios", UObj);
+                request.getSession().setAttribute("users", UObj);
                 response.sendRedirect("usuariosUpdateForm.jsp");
             }
             
@@ -99,7 +102,7 @@ public class UsuariosServlet extends HttpServlet {
                 
                 //send to frontend
                 request.getSession().setAttribute("users", CArray);
-                response.sendRedirect("UsuariosForm.jsp");
+                response.sendRedirect("UsuariosMaintain.jsp");
             }
                 }
         
