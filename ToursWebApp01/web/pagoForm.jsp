@@ -48,7 +48,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="ClientServlet?formid=3&id=<%= CTemp.getId() %>">
+                        <a href="PagoServlet?formid=3&id=<%= CTemp.getId() %>">
                             delete
                         </a>
                     </td>
