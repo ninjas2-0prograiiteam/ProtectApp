@@ -3,6 +3,7 @@ package tours.prograii.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -87,7 +88,21 @@ public class UsuariosServlet extends HttpServlet {
                 response.sendRedirect("genericMessage.jsp");
                 
             }
+            
+            if(strFormId.equals("5"))
+            {
+                //access logic
+                UsuariosLogic ULogic = new UsuariosLogic();
+                ArrayList<UsuariosObj> CArray = ULogic.getAllUsers();
+                
+                //envair un correo
+                
+                //send to frontend
+                request.getSession().setAttribute("users", CArray);
+                response.sendRedirect("UsuariosForm.jsp");
+            }
                 }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

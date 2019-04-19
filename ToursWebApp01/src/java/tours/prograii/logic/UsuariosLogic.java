@@ -2,6 +2,7 @@ package tours.prograii.logic;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import tours.prograii.database.DatabaseX;
@@ -104,6 +105,58 @@ public class UsuariosLogic extends Logic {
         }
         
         return CTemp;
+        
+    }
+        
+        public ArrayList<UsuariosObj> getAllUsers() 
+    {
+        //select * from travelsys.client;
+        DatabaseX database = getDatabase();
+        String strSql = "select * from tourdatabase.usuarios ";
+        System.out.println(strSql);
+        ResultSet CResult = database.executeQuery(strSql);
+        ArrayList<UsuariosObj> CArray = null;
+        
+        if(CResult!=null)
+        {
+            int iId;
+            String strNombre;
+            String strApellido;
+            int iEdad;
+            int iDui;
+            String strEmail;
+            String strUsername;
+            String strPassword;
+            int iIdDepartamento;
+            
+            UsuariosObj CTemp;
+            CArray = new ArrayList<>();
+            
+            try 
+            {
+                while(CResult.next())
+                {
+                    iId = CResult.getInt("id");
+                    strNombre = CResult.getString("nombre");
+                    strApellido = CResult.getString("apellido");
+                    iEdad = CResult.getInt("edad");
+                    iDui = CResult.getInt("dui");
+                    strEmail = CResult.getString("email");
+                    strUsername = CResult.getString("user");
+                    strPassword = CResult.getString("contra");
+                    iIdDepartamento = CResult.getInt("departamento");
+                    
+                    CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui,strEmail, strUsername, strPassword, iIdDepartamento);
+                    CArray.add(CTemp);
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(UsuariosLogic.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return CArray;
         
     }
 }
