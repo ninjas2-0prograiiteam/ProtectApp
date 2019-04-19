@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuevo Pago</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Nuevo Pago</h1>
+        <br><br>
+        
+        <form id="myform" name="myform" action="PagoServlet" method="get">
+            
+            <label>Id Usuario:</label><br>
+            <input type="number" id="IdUsuario" name="idusuario" />
+            <br><br>
+            
+            <label>No de tarjeta:</label><br>
+            <input type="number" id="NodeTarjeta" name="nodetarjeta" />
+            <br><br>
+            
+            <label>CVV:</label><br>
+            <input type="number" id="Cvv" name="cvv" />
+            <br><br>
+            
+            <label>Fecha de vencimiento:</label><br>
+            <input type="number" id="FechadeVencimiento" name="fechadevencimiento" />
+            <br><br>
+            
+            <input type="submit" id="mysubmit" name="mysubmit" value="Create"/>
+            <input type="hidden" id="formid" name="formid" value="1" />
+        </form>
+        
+    </body>
+</html>
