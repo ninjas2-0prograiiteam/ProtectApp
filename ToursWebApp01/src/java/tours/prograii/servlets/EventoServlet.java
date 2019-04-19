@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tours.prograii.logic.DepLogic;
 import tours.prograii.logic.EventoLogic;
+import tours.prograii.objects.DepartamentosObj;
 import tours.prograii.objects.EventoObj;
 
 @WebServlet(name = "EventoServlet", urlPatterns = {"/EventoServlet"})
@@ -60,6 +62,7 @@ public class EventoServlet extends HttpServlet{
                 //send to frontend
                 request.getSession().setAttribute("evento", CArray);
                 response.sendRedirect("EventoForm.jsp");
+                
                 }
              
              if(strFormId.equals("3"))
@@ -118,7 +121,19 @@ public class EventoServlet extends HttpServlet{
                 //send to frontend
                 request.getSession().setAttribute("rows", new Integer(iRows) );
                 response.sendRedirect("genericMessage.jsp");                 
-            }        
+            }
+             if(strFormId.equals("6"))
+            {
+                //access logic
+                DepLogic DLogic = new DepLogic();
+                ArrayList<DepartamentosObj> CArray = DLogic.getAllDeps();
+                
+                //envair un correo
+                
+                //send to frontend
+                request.getSession().setAttribute("departamentos", CArray);
+                response.sendRedirect("EventoNew.jsp");
+            }
         }
     }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

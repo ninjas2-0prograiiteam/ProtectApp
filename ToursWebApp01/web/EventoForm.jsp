@@ -24,7 +24,7 @@
     <body>
         <h1>Evento</h1>
         <br>
-        <a href="EventoNew.html">Nuevo Evento</a>
+        <a href="EventoServlet?formid=6">Ingresar un nuevo evento</a>
         <br><br>
         <table>
         <tr>
