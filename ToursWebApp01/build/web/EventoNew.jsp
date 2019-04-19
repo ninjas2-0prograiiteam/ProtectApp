@@ -52,6 +52,7 @@
                         }
                     }
                 %>
+                </select>
             <br><br>
             
             <label>Hora de salida:</label><br>

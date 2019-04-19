@@ -74,6 +74,7 @@
                         }
                     }
                 %>
+                </select>
                 <br><br>
 
             <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>

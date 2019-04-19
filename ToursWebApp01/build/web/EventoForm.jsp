@@ -50,7 +50,7 @@
                     <td><%= CTemp.getId() %></td>
                     <td><%= CTemp.getIdEmpresa() %></td>
                     <td><%= CTemp.getIdCategoria() %></td>
-                    <td><<%= CTemp.getIdDepartamento() %>/td>
+                    <td><%= CTemp.getIdDepartamento() %></td>
                     <td><%= CTemp.getHoradeSalida() %></td>
                     <td><%= CTemp.getFecha() %></td>
                     <td><%= CTemp.getHoradeRetorno() %></td>
