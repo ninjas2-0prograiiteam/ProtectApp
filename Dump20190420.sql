@@ -160,8 +160,10 @@ CREATE TABLE `evento` (
   `horaderetorno` varchar(45) NOT NULL,
   `puntodeencuentro` varchar(500) NOT NULL,
   `precio` int(11) NOT NULL,
+  `cupo` int(11) NOT NULL,
+  `cuposrestantes` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,7 +172,7 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` VALUES (2,1,1,11,'17:13','2019-04-27','16:12','Gasolinera Puma',4),(3,2,2,0,'7','7757','7','757',3),(5,4,2,2,'9','7757','7','757',15),(6,4,0,0,'9','156465','7','757',5),(7,4,2,4,'10','hoy','7','aqui',1),(8,4,2,4,'8','2022-03-04','03:03','hola',14),(9,8,6,7,'12:10','2019-12-09','19:16','Parque',20);
+INSERT INTO `evento` VALUES (2,1,1,11,'17:13','2019-04-27','16:12','Gasolinera Puma',4,0,0),(3,2,2,0,'7','7757','7','757',3,0,0),(5,4,2,2,'9','7757','7','757',15,0,0),(6,4,0,0,'9','156465','7','757',5,0,0),(7,4,2,4,'10','hoy','7','aqui',1,0,0),(8,4,2,4,'8','2022-03-04','03:03','hola',14,0,0),(9,8,6,7,'12:10','2019-12-09','19:16','Parque',20,0,0),(10,1,1,2,'52','727','72727','72727',8,9,9);
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,4 +250,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-20  8:58:38
+-- Dump completed on 2019-04-20 12:56:53
