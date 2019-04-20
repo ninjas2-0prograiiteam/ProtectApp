@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tours.prograii.logic.CatLogic;
 import tours.prograii.logic.DepLogic;
+import tours.prograii.logic.EmpresaLogic;
 import tours.prograii.logic.EventoLogic;
 import tours.prograii.objects.CategoriaObj;
 import tours.prograii.objects.DepartamentosObj;
+import tours.prograii.objects.EmpresaObj;
 import tours.prograii.objects.EventoObj;
 
 @WebServlet(name = "EventoServlet", urlPatterns = {"/EventoServlet"})
@@ -133,9 +135,14 @@ public class EventoServlet extends HttpServlet{
                 request.getSession().setAttribute("departamentos", CArray);
                 
                 CatLogic CLogic = new CatLogic();
-                ArrayList<CategoriaObj> CaArray = CLogic.getAllDeps();
+                ArrayList<CategoriaObj> CaArray = CLogic.getAllCat();
               //send to frontend
                 request.getSession().setAttribute("categoria", CaArray);
+                
+                EmpresaLogic ELogic = new EmpresaLogic();
+                ArrayList<EmpresaObj> EmpArray = ELogic.getAllEmpresas();
+              //send to frontend
+                request.getSession().setAttribute("empresa", EmpArray);
                 
                 response.sendRedirect("EventoNew.jsp");
             }

@@ -4,6 +4,7 @@
     Author     : HP PC
 --%>
 
+<%@page import="tours.prograii.objects.EmpresaObj"%>
 <%@page import="tours.prograii.objects.CategoriaObj"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="tours.prograii.objects.DepartamentosObj"%>
@@ -23,6 +24,10 @@
         ArrayList<CategoriaObj> CaArray = 
                 (ArrayList<CategoriaObj>)request.getSession().getAttribute("categoria");
         Iterator<CategoriaObj> iteCatArray = CaArray.iterator();
+        
+        ArrayList<EmpresaObj> EmpArray = 
+                (ArrayList<EmpresaObj>)request.getSession().getAttribute("empresa");
+        Iterator<EmpresaObj> iteEmpArray = EmpArray.iterator();
     %> 
     <body>
         <h1>Nuevo Evento</h1>
@@ -30,7 +35,26 @@
         
         <form id="myform" name="myform" action="EventoServlet" method="get">
             <label>Empresa:</label><br>
-            <input type="number" id="empresa" name="empresa"/>
+            <select id="empresa" name="empresa">
+                <option id="empresa0" name="empresa0" value="0"></option>                
+                <%
+                    if(iteCatArray!=null)
+                    {
+                        EmpresaObj CEmpTemp;
+                        while(iteEmpArray.hasNext())
+                        {
+                            CEmpTemp = iteEmpArray.next();
+                %>
+                            <option id="categoria<%= CEmpTemp.getId() %>" 
+                                    name="categoria<%= CEmpTemp.getId() %>" 
+                                    value="<%= CEmpTemp.getId() %>">
+                                <%= CEmpTemp.getNombre()%>
+                            </option>
+                <%
+                        }
+                    }
+                %>
+                </select>
             <br><br>
             
             <label>Categoria:</label><br>

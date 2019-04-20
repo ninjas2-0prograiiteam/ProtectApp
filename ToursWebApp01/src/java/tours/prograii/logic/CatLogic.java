@@ -10,7 +10,7 @@ import tours.prograii.objects.CategoriaObj;
 
 public class CatLogic extends Logic{
 
-    public ArrayList<CategoriaObj> getAllDeps() 
+    public ArrayList<CategoriaObj> getAllCat() 
     {
         //select * from travelsys.client;
         DatabaseX database = getDatabase();
