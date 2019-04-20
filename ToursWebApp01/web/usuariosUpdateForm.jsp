@@ -17,6 +17,10 @@
         UsuariosObj UObj = 
                 (UsuariosObj)request.getSession().getAttribute("users");
         
+        ArrayList<DepartamentosObj> CDepArray = 
+                (ArrayList<DepartamentosObj>)request.getSession().getAttribute("departamentos");
+        Iterator<DepartamentosObj> iteDepArray = CDepArray.iterator();
+        
     %>
     <body>
         <h1>Actualización de datos</h1>
@@ -59,9 +63,27 @@
             <br><br>
 
             <label>Departamento:</label><br>
-            <input type="number" id="departamento" name="departamento" value="<%= UObj.getIdDepartamento() %>"/>
-            <br><br>
-            
+            <select id="departamento" name="departamento">
+                <option id="departamento0" name="departamento0" value="<%= UObj.getIdDepartamento() %>"></option>                
+                <%
+                    if(iteDepArray!=null)
+                    {
+                        DepartamentosObj CDepTemp;
+                        while(iteDepArray.hasNext())
+                        {
+                            CDepTemp = iteDepArray.next();
+                %>
+                            <option id="departamento<%= CDepTemp.getId() %>" 
+                                    name="departamento<%= CDepTemp.getId() %>" 
+                                    value="<%= CDepTemp.getId() %>">
+                                <%= CDepTemp.getNombre()%>
+                            </option>
+                <%
+                        }
+                    }
+                %>
+                </select>
+                <br><br>
             <input type="submit" id="mysubmit" name="mysubmmit" value="Actualizar"/>
             <input type="hidden" id="formid" name="formid" value="4"/>
             <input type="hidden" id="id" name="id" value="<%= UObj.getId() %>" />

@@ -20,8 +20,7 @@
         <script src="Scripts/EventoFormScript.js" type="text/javascript"></script>
         <title>Nuevo Evento</title>
     </head>
-    <%
-        ArrayList<DepartamentosObj> CDepArray = 
+    <%ArrayList<DepartamentosObj> CDepArray = 
                 (ArrayList<DepartamentosObj>)request.getSession().getAttribute("departamentos");
         Iterator<DepartamentosObj> iteDepArray = CDepArray.iterator();
         
@@ -32,6 +31,7 @@
         ArrayList<EmpresaObj> EmpArray = 
                 (ArrayList<EmpresaObj>)request.getSession().getAttribute("empresa");
         Iterator<EmpresaObj> iteEmpArray = EmpArray.iterator();
+        
     %> 
     <body>
         <h1>Nuevo Evento</h1>

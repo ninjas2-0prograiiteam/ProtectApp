@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tours.prograii.logic.DepLogic;
 import tours.prograii.logic.UsuariosLogic;
+import tours.prograii.objects.DepartamentosObj;
 import tours.prograii.objects.UsuariosObj;
 
 @WebServlet(name = "UsuariosServlet", urlPatterns = {"/UsuariosServlet"})
@@ -61,6 +63,10 @@ public class UsuariosServlet extends HttpServlet {
                 String strId = request.getParameter("id");
                 int iId = Integer.parseInt(strId);
                 
+                DepLogic DLogic = new DepLogic();
+                ArrayList<DepartamentosObj> CArray = DLogic.getAllDeps();
+
+                request.getSession().setAttribute("departamentos", CArray);
                 UsuariosLogic ULogic = new UsuariosLogic();
                 UsuariosObj UObj = ULogic.getUsersById(iId);
                 

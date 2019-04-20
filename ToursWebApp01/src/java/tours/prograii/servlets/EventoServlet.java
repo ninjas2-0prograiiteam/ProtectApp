@@ -91,6 +91,18 @@ public class EventoServlet extends HttpServlet{
                 int iId = Integer.parseInt(strId);
                 
                 //access logic
+                DepLogic DLogic = new DepLogic();
+                ArrayList<DepartamentosObj> CArray = DLogic.getAllDeps();
+              //send to frontend
+                request.getSession().setAttribute("departamentos", CArray);
+                
+                CatLogic CLogic = new CatLogic();
+                ArrayList<CategoriaObj> CaArray = CLogic.getAllCat();
+              //send to frontend
+                request.getSession().setAttribute("categoria", CaArray);
+
+                
+                //access logic
                 EventoLogic ELogic = new EventoLogic();
                 EventoObj CEvento = ELogic.getEventoPorId(iId);
                 

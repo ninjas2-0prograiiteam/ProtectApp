@@ -4,6 +4,11 @@
     Author     : Marcos
 --%>
 
+<%@page import="tours.prograii.objects.EmpresaObj"%>
+<%@page import="tours.prograii.objects.CategoriaObj"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="tours.prograii.objects.DepartamentosObj"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="tours.prograii.objects.EventoObj"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +24,14 @@
     <%
         EventoObj CEvento = 
                 (EventoObj)request.getSession().getAttribute("evento");
+        
+        ArrayList<DepartamentosObj> CDepArray = 
+                (ArrayList<DepartamentosObj>)request.getSession().getAttribute("departamentos");
+        Iterator<DepartamentosObj> iteDepArray = CDepArray.iterator();
+        
+        ArrayList<CategoriaObj> CaArray = 
+                (ArrayList<CategoriaObj>)request.getSession().getAttribute("categoria");
+        Iterator<CategoriaObj> iteCatArray = CaArray.iterator();
     %>
     <body>
         <h1>Actualizar Evento</h1>
@@ -26,21 +39,58 @@
         
         <form id="myform" name="myform" action="EventoServlet" method="get">
             <label>Id:</label><br>
-            <input type="number" id="idnon" name="idnon" value="<%= CEvento.getId() %>" disabled/>
+            <input type="number" id="nonId" name="nonId" value="<%= CEvento.getId() %>" disabled/>
             <br><br>
             
             <label>Empresa:</label><br>
-            <input type="number" id="empresa" name="empresa" value="<%= CEvento.getIdEmpresa() %>"/>
+            <input type="number" id="nonEmpresa" name="nonEmpresa" value="<%= CEvento.getIdEmpresa() %>" disabled/>
             <br><br>
             
             <label>Categoria:</label><br>
-            <input type="number" id="categoria" name="categoria" value="<%= CEvento.getIdCategoria() %>"/>
-            <br><br>
+            <select id="categoria" name="categoria">
+                <option id="categoria0" name="categoria0" value="<%= CEvento.getIdCategoria() %>"></option>                
+                <%
+                    if(iteCatArray!=null)
+                    {
+                        CategoriaObj CCatTemp;
+                        while(iteCatArray.hasNext())
+                        {
+                            CCatTemp = iteCatArray.next();
+                %>
+                            <option id="categoria<%= CCatTemp.getId() %>" 
+                                    name="categoria<%= CCatTemp.getId() %>" 
+                                    value="<%= CCatTemp.getId() %>">
+                                <%= CCatTemp.getTipo()%>
+                            </option>
+                <%
+                        }
+                    }
+                %>
+                </select>
+                <br><br>
             
             <label>Departamento:</label><br>
-            <input type="number" id="departamento" name="departamento" value="<%= CEvento.getIdDepartamento() %>"/>
-            <br><br>
-            
+            <select id="departamento" name="departamento">
+                <option id="departamento0" name="departamento0" value="<%= CEvento.getIdDepartamento() %>"></option>                
+                <%
+                    if(iteDepArray!=null)
+                    {
+                        DepartamentosObj CDepTemp;
+                        while(iteDepArray.hasNext())
+                        {
+                            CDepTemp = iteDepArray.next();
+                %>
+                            <option id="departamento<%= CDepTemp.getId() %>" 
+                                    name="departamento<%= CDepTemp.getId() %>" 
+                                    value="<%= CDepTemp.getId() %>">
+                                <%= CDepTemp.getNombre()%>
+                            </option>
+                <%
+                        }
+                    }
+                %>
+                </select>
+                <br><br>
             <label>Hora de salida:</label><br>
             <input type="time" id="horadesalida" name="horadesalida" value="<%= CEvento.getHoradeSalida() %>"/>
             <br><br>
@@ -64,6 +114,7 @@
             <input type="submit" id="mysubmit" name="mysubmit" value="Actualizar"/>
             <input type="hidden" id="formid" name="formid" value="5" />
             <input type="hidden" id="id" name="id" value="<%= CEvento.getId() %>" />
+            <input type="hidden" id="empresa" name="empresa" value="<%= CEvento.getIdEmpresa() %>"/>
         </form>
     </body>
 </html>
