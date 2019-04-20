@@ -10,6 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="Scripts/jquery-3.3.1.js" type="text/javascript"></script>
+        <script src="Scripts/jquery.validate.js" type="text/javascript"></script>
+        <script src="Scripts/additional-methods.js" type="text/javascript"></script>
+        <script src="Scripts/EmpresaFormScript.js" type="text/javascript"></script>
         <title>Update empresa</title>
     </head>
     <%
@@ -31,7 +35,7 @@
             <br><br>
             
             <label>Email de la empresa:</label><br>
-            <input type="text" id="email" name="email" value="<%= CEmpresa.getEmail() %>"/>
+            <input type="email" id="email" name="email" value="<%= CEmpresa.getEmail() %>"/>
             <br><br>
             
             <label>Teléfono de la empresa:</label><br>
@@ -47,7 +51,7 @@
             <br><br>
             
             <label>Contraseña:</label><br>
-            <input type="passw" id="password" name="password" value="<%= CEmpresa.getPassword() %>"/>
+            <input type="password" id="password" name="password" value="<%= CEmpresa.getPassword() %>"/>
             <br><br>
             
             <label>Confirme contraseña:</label><br>

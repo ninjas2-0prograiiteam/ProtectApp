@@ -34,13 +34,12 @@ public class EmpresaServlet extends HttpServlet
                 String strUsername = request.getParameter("username");
                 String strPassword = request.getParameter("password");
                 String strNodecuenta = request.getParameter("nodecuenta");
-                int iNodecuenta = Integer.parseInt(strNodecuenta);
                 int iTelefono = Integer.parseInt(strTelefono);
                 
                 
                 //access logic
                 EmpresaLogic CLogic = new EmpresaLogic();
-                int iRows = CLogic.insertEmpresaRows(strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, iNodecuenta);
+                int iRows = CLogic.insertEmpresaRows(strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, strNodecuenta);
                 System.out.println("insert empresa rows: " + iRows);
                                 
                 //send to frontend
@@ -103,12 +102,11 @@ public class EmpresaServlet extends HttpServlet
                 String strPassword = request.getParameter("password");
                 String strNodecuenta = request.getParameter("nodecuenta");
                 int iId = Integer.parseInt(strId);
-                int iNodecuenta = Integer.parseInt(strNodecuenta);
                 int iTelefono = Integer.parseInt(strTelefono);
                 
                 //access logic
                 EmpresaLogic CLogic = new EmpresaLogic();
-                int iRows = CLogic.updateEmpresaRows(iId,strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, iNodecuenta);
+                int iRows = CLogic.updateEmpresaRows(iId,strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, strNodecuenta);
                 System.out.println("update empresa rows: " + iRows); 
                 
                 //send to frontend

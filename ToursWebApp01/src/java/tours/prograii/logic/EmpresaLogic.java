@@ -31,7 +31,7 @@ public class EmpresaLogic extends Logic
             String strNit;
             String strUsername;
             String strPassword;
-            int iNodecuenta;
+            String strNodecuenta;
             
             EmpresaObj CTemp;
             CArray = new ArrayList<>();
@@ -47,10 +47,10 @@ public class EmpresaLogic extends Logic
                     strNit = CResult.getString("nit");
                     strUsername = CResult.getString("username");
                     strPassword = CResult.getString("password");
-                    iNodecuenta = CResult.getInt("nodecuenta");
+                    strNodecuenta = CResult.getString("nodecuenta");
                     
                     //String strNombre,String strEmail, int iTelefono,int iNit,String strUsername,String strPassword,int iNodecuenta
-                    CTemp = new EmpresaObj(iId, strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, iNodecuenta);
+                    CTemp = new EmpresaObj(iId, strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, strNodecuenta);
                     CArray.add(CTemp);
                 }
             } 
@@ -64,13 +64,13 @@ public class EmpresaLogic extends Logic
     }
 
     public int insertEmpresaRows(String p_strNombre, String p_strEmail, int p_iTelefono, String p_strNit,
-            String p_strUsername, String p_strPassword, int p_iNodeCuenta) 
+            String p_strUsername, String p_strPassword, String p_strNodeCuenta) 
     {
-        //String strSql = "INSERT INTO tourdatabase.empresa (id,nombre,email,telefono,nit,username,password,nodecuenta)"
-        //        + "VALUES(0,'"+strNombre+"','"+strEmail+"',"+iTelefono+","+iNit+",'"+strUsername+"','"+strPassword+"',"+iNodecuenta+");";
+        //INSERT INTO tourdatabase.empresa(id,nombre,email,telefono,nit,username,password,nodecuenta)
+        //VALUES(,,,,,,,);
         DatabaseX database = getDatabase();
         String strSql = "INSERT INTO tourdatabase.empresa (id,nombre,email,telefono,nit,username,password,nodecuenta)"
-                + "VALUES(0,'"+p_strNombre+"','"+p_strEmail+"',"+p_iTelefono+",'"+p_strNit+"','"+p_strUsername+"','"+p_strPassword+"',"+p_iNodeCuenta+");";
+                + "VALUES(0,'"+p_strNombre+"','"+p_strEmail+"',"+p_iTelefono+",'"+p_strNit+"','"+p_strUsername+"','"+p_strPassword+"','"+p_strNodeCuenta+"');";
         
         System.out.println(strSql);
         int iRows = database.executeNonQueryRows(strSql);
@@ -87,14 +87,14 @@ public class EmpresaLogic extends Logic
     }
     
     public int updateEmpresaRows(int p_iId, String p_strNombre, String p_strEmail, int p_iTelefono, String p_strNit,
-            String p_strUsername, String p_strPassword, int p_iNodeCuenta) 
+            String p_strUsername, String p_strPassword, String p_strNodeCuenta) 
     {
         //UPDATE tourdatabase.empresa SET id = 7, nombre = 'ctyyuui', email = 'rdtfgy',
         //telefono = 567, nit = 098, username = 'nm', password = 'oty', nodecuenta = 7 WHERE id = 1;
         DatabaseX database = getDatabase();
         String strSql = "UPDATE tourdatabase.empresa SET nombre = '"+p_strNombre+"',"
                 + " email = '"+p_strEmail+"', telefono = "+p_iTelefono+", nit = '"+p_strNit+"', username = '"+p_strUsername+"',"
-                + " password = '"+p_strPassword+"', nodecuenta = "+p_iNodeCuenta+" WHERE id = "+p_iId+";";
+                + " password = '"+p_strPassword+"', nodecuenta = '"+p_strNodeCuenta+"' WHERE id = "+p_iId+";";
         System.out.println(strSql);
         int iRows = database.executeNonQueryRows(strSql);
         return iRows;        
@@ -118,7 +118,7 @@ public class EmpresaLogic extends Logic
             String strNit;
             String strUsername;
             String strPassword;
-            int iNodecuenta;
+            String strNodecuenta;
             
             try 
             {
@@ -131,10 +131,10 @@ public class EmpresaLogic extends Logic
                     strNit = CResult.getString("nit");
                     strUsername = CResult.getString("username");
                     strPassword = CResult.getString("password");
-                    iNodecuenta = CResult.getInt("nodecuenta");
+                    strNodecuenta = CResult.getString("nodecuenta");
                     
                     //String strNombre,String strEmail, int iTelefono,int iNit,String strUsername,String strPassword,int iNodecuenta
-                    CTemp = new EmpresaObj(iId, strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, iNodecuenta);
+                    CTemp = new EmpresaObj(iId, strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, strNodecuenta);
                 }
             } 
             catch (SQLException ex) 

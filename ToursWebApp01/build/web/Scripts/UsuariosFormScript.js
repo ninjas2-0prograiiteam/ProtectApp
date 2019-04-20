@@ -13,9 +13,7 @@ $(document).ready(function(){
                 maxlength:9
             },
             
-            email: {
-                required: true  
-            },
+            email:"required",
             user: "required",
             contra : {
                 required: true,
@@ -29,7 +27,7 @@ $(document).ready(function(){
             departamento: "required"
         },
         messages: {
-            nombre: "Por facor ingrese su nombre",
+            nombre: "Por favor ingrese su nombre",
             apellido:"Por favor ingrese su apellido",
             edad: {
                 required: "Ingrese su edad por favor",

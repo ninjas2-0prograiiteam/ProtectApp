@@ -8,10 +8,10 @@ public class EmpresaObj {
     private String m_strNit;
     private String m_strUsername;
     private String m_strPassword;
-    private int m_iNodeCuenta;
+    private String m_strNodeCuenta;
 
     public EmpresaObj(int p_iId, String p_strNombre, String p_strEmail, int p_iTelefono, String p_strNit, 
-            String p_strUsername, String p_strPassword, int p_iNodeCuenta) {
+            String p_strUsername, String p_strPassword, String p_strNodeCuenta) {
         setId(p_iId);
         setNombre(p_strNombre);
         setEmail(p_strEmail);
@@ -19,7 +19,7 @@ public class EmpresaObj {
         setNit(p_strNit);
         setUsername(p_strUsername);
         setPassword(p_strPassword);
-        setNodeCuenta(p_iNodeCuenta);
+        setNodeCuenta(p_strNodeCuenta);
     }
     
     
@@ -81,12 +81,12 @@ public class EmpresaObj {
         m_strPassword = p_strPassword;
     }
 
-    public int getNodeCuenta() {
-        return m_iNodeCuenta;
+    public String getNodeCuenta() {
+        return m_strNodeCuenta;
     }
 
-    private void setNodeCuenta(int p_iNodeCuenta) {
-        m_iNodeCuenta = p_iNodeCuenta;
+    private void setNodeCuenta(String p_strNodeCuenta) {
+        m_strNodeCuenta = p_strNodeCuenta;
     }
     
     

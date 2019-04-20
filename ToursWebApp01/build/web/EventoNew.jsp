@@ -14,6 +14,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="Scripts/jquery-3.3.1.js" type="text/javascript"></script>
+        <script src="Scripts/jquery.validate.js" type="text/javascript"></script>
+        <script src="Scripts/additional-methods.js" type="text/javascript"></script>
+        <script src="Scripts/EventoFormScript.js" type="text/javascript"></script>
         <title>Nuevo Evento</title>
     </head>
     <%
@@ -104,15 +108,15 @@
             <br><br>
             
             <label>Hora de salida:</label><br>
-            <input type="text" id="horadesalida" name="horadesalida"/>
+            <input type="time" id="horadesalida" name="horadesalida"/>
             <br><br>
             
             <label>Fecha:</label><br>
-            <input type="text" id="fecha" name="fecha"/>
+            <input type="date" id="fecha" name="fecha"/>
             <br><br>
             
             <label>Hora de retorno:</label><br>
-            <input type="text" id="horaderetorno" name="horaderetorno"/>
+            <input type="time" id="horaderetorno" name="horaderetorno"/>
             <br><br>
             
             <label>Punto de encuentro:</label><br>
