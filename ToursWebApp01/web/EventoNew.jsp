@@ -4,6 +4,7 @@
     Author     : HP PC
 --%>
 
+<%@page import="tours.prograii.objects.CategoriaObj"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="tours.prograii.objects.DepartamentosObj"%>
 <%@page import="java.util.ArrayList"%>
@@ -18,6 +19,10 @@
         ArrayList<DepartamentosObj> CDepArray = 
                 (ArrayList<DepartamentosObj>)request.getSession().getAttribute("departamentos");
         Iterator<DepartamentosObj> iteDepArray = CDepArray.iterator();
+        
+        ArrayList<CategoriaObj> CaArray = 
+                (ArrayList<CategoriaObj>)request.getSession().getAttribute("categoria");
+        Iterator<CategoriaObj> iteCatArray = CaArray.iterator();
     %> 
     <body>
         <h1>Nuevo Evento</h1>
@@ -29,7 +34,26 @@
             <br><br>
             
             <label>Categoria:</label><br>
-            <input type="number" id="categoria" name="categoria"/>
+            <select id="categoria" name="categoria">
+                <option id="categoria0" name="categoria0" value="0"></option>                
+                <%
+                    if(iteCatArray!=null)
+                    {
+                        CategoriaObj CCatTemp;
+                        while(iteCatArray.hasNext())
+                        {
+                            CCatTemp = iteCatArray.next();
+                %>
+                            <option id="categoria<%= CCatTemp.getId() %>" 
+                                    name="categoria<%= CCatTemp.getId() %>" 
+                                    value="<%= CCatTemp.getId() %>">
+                                <%= CCatTemp.getTipo()%>
+                            </option>
+                <%
+                        }
+                    }
+                %>
+                </select>
             <br><br>
             
             <label>Departamento:</label><br>

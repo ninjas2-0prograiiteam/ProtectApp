@@ -9,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tours.prograii.logic.CatLogic;
 import tours.prograii.logic.DepLogic;
 import tours.prograii.logic.EventoLogic;
+import tours.prograii.objects.CategoriaObj;
 import tours.prograii.objects.DepartamentosObj;
 import tours.prograii.objects.EventoObj;
 
@@ -127,11 +129,14 @@ public class EventoServlet extends HttpServlet{
                 //access logic
                 DepLogic DLogic = new DepLogic();
                 ArrayList<DepartamentosObj> CArray = DLogic.getAllDeps();
-                
-                //envair un correo
-                
-                //send to frontend
+              //send to frontend
                 request.getSession().setAttribute("departamentos", CArray);
+                
+                CatLogic CLogic = new CatLogic();
+                ArrayList<CategoriaObj> CaArray = CLogic.getAllDeps();
+              //send to frontend
+                request.getSession().setAttribute("categoria", CaArray);
+                
                 response.sendRedirect("EventoNew.jsp");
             }
         }

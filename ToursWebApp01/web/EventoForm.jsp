@@ -20,6 +20,7 @@
         ArrayList<EventoObj> CArray = 
                 (ArrayList<EventoObj>)request.getSession().getAttribute("evento");
         Iterator<EventoObj> iteArray = CArray.iterator();
+        
     %>
     <body>
         <h1>Evento</h1>
