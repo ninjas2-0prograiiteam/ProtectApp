@@ -127,6 +127,10 @@
             <input type="number" id="precio" name="precio"/>
             <br><br>
             
+            <label>Cupo:</label><br>
+            <input type="number" id="cupo" name="cupo"/>
+            <br><br>
+            
             <input type="submit" id="mysubmit" name="mysubmit" value="Create"/>
             <input type="hidden" id="formid" name="formid" value="1" />
         </form>

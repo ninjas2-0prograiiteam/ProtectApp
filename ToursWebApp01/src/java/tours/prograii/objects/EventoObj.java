@@ -11,9 +11,11 @@ public class EventoObj {
         private String m_strHoradeRetorno;
         private String m_strPuntodeEncuentro;
         private int m_iPrecio;
+        private int m_iCupo;
+        private int m_iCuposRestantes;
 
     public EventoObj(int p_iId, int p_iIdEmpresa, int p_iIdCategoria, int p_iIdDepartamento, String p_strHoradeSalida,
-            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio) {
+            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio,int p_iCupo,int p_iCuposRestantes) {
         setId(p_iId);
         setIdEmpresa(p_iIdEmpresa);
         setIdCategoria(p_iIdCategoria);
@@ -23,6 +25,8 @@ public class EventoObj {
         setHoradeRetorno(p_strHoradeRetorno);
         setPuntodeEncuentro(p_strPuntodeEncuentro);
         setPrecio(p_iPrecio);
+        setCupo(p_iCupo);
+        setCuposRestantes(p_iCuposRestantes);
     }
         
     public int getId() {
@@ -97,6 +101,22 @@ public class EventoObj {
 
     private void setPrecio(int p_iPrecio) {
         m_iPrecio = p_iPrecio;
+    }
+
+    public int getCupo() {
+        return m_iCupo;
+    }
+
+    private void setCupo(int p_iCupo) {
+        m_iCupo = p_iCupo;
+    }
+
+    public int getCuposRestantes() {
+        return m_iCuposRestantes;
+    }
+
+    public void setCuposRestantes(int p_iCuposRestantes) {
+        m_iCuposRestantes = p_iCuposRestantes;
     }
         
         

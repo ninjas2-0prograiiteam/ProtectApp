@@ -40,15 +40,17 @@ public class EventoServlet extends HttpServlet{
                 String strHoradeRetorno = request.getParameter("horaderetorno");
                 String strPuntodeEncuentro = request.getParameter("puntodeencuentro");
                 String strPrecio = request.getParameter("precio");
+                String strCupo = request.getParameter("cupo");
                 int iIdEmpresa = Integer.parseInt(strIdEmpresa);
                 int iIdCategoria = Integer.parseInt(strIdCategoria);
                 int iIdDepartamento = Integer.parseInt(strIdDepartamento);
                 int iPrecio = Integer.parseInt(strPrecio);
+                int iCupo = Integer.parseInt(strCupo);
                 
                 //acceder logic
                 EventoLogic ELogic = new EventoLogic();
                 int iRows = ELogic.InsertarNuevoEventoInt
-                (iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio);
+                (iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio, iCupo);
                  System.out.println("insert event rows: " + iRows);
                 
                 //enviar 
@@ -123,15 +125,17 @@ public class EventoServlet extends HttpServlet{
                 String strHoradeRetorno = request.getParameter("horaderetorno");
                 String strPuntodeEncuentro = request.getParameter("puntodeencuentro");
                 String strPrecio = request.getParameter("precio");
+                String strCupo = request.getParameter("cupo");
                 int iId = Integer.parseInt(strId);
                 int iIdEmpresa = Integer.parseInt(strIdEmpresa);
                 int iIdCategoria = Integer.parseInt(strIdCategoria);
                 int iIdDepartamento = Integer.parseInt(strIdDepartamento);
                 int iPrecio = Integer.parseInt(strPrecio);
+                int iCupo = Integer.parseInt(strCupo);
                 
                 //access logic
                 EventoLogic ELogic = new EventoLogic();
-                int iRows = ELogic.ActualizarEvento(iId, iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio);
+                int iRows = ELogic.ActualizarEvento(iId, iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio,iCupo);
                 System.out.println("update events rows: " + iRows); 
                 
                 //send to frontend

@@ -38,6 +38,8 @@
             <th>Hora de retorno</th>
             <th>Punto de reencuentro</th>
             <th>Precio</th>
+            <th>Cupo</th>
+            <th>Cupos restantes</th>
         </tr>
         <%
             if(iteArray!=null)
@@ -57,6 +59,8 @@
                     <td><%= CTemp.getHoradeRetorno() %></td>
                     <td><%= CTemp.getPuntodeEncuentro() %></td>
                     <td><%= CTemp.getPrecio() %></td>
+                    <td><%= CTemp.getCupo() %></td>
+                    <td><%= CTemp.getCuposRestantes() %></td>
                     <td>
                         <a href="EventoServlet?formid=4&id=<%= CTemp.getId() %>">
                             update

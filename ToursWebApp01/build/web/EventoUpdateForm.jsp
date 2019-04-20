@@ -111,6 +111,10 @@
             <input type="number" id="precio" name="precio" value="<%= CEvento.getPrecio() %>"/>
             <br><br>
             
+            <label>Cupo:</label><br>
+            <input type="number" id="cupo" name="cupo" value="<%= CEvento.getCupo() %>"/>
+            <br><br>
+            
             <input type="submit" id="mysubmit" name="mysubmit" value="Actualizar"/>
             <input type="hidden" id="formid" name="formid" value="5" />
             <input type="hidden" id="id" name="id" value="<%= CEvento.getId() %>" />

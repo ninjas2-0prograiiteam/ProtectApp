@@ -32,7 +32,7 @@ public class EventoLogic extends Logic
             String strHoradeRetorno;
             String strPuntodeEncuentro;
             int iPrecio;
-            
+            int iCupo;
             EventoObj CTemp;
             CArray = new ArrayList<>();
             
@@ -49,7 +49,8 @@ public class EventoLogic extends Logic
                     strHoradeRetorno = CResult.getString("horaderetorno");
                     strPuntodeEncuentro = CResult.getString("puntodeencuentro");
                     iPrecio = CResult.getInt("precio");
-                    CTemp = new EventoObj(iId, iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio);
+                    iCupo = CResult.getInt("cupo");
+                    CTemp = new EventoObj(iId, iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio,iCupo,iCupo);
                     CArray.add(CTemp);
                 }
             } 
@@ -63,10 +64,10 @@ public class EventoLogic extends Logic
     }
     
     public int InsertarNuevoEventoInt(int p_iIdEmpresa ,int p_iIdCategoria, int p_iIdDepartamento, String p_strHoradeSalida,
-            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio){
+            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio, int iCupo){
         DatabaseX database = getDatabase();
-        String strSql = "INSERT INTO tourdatabase.evento(id,idempresa,idcategoria,iddepartamento,horadesalida,fecha,horaderetorno,puntodeencuentro,precio)\n" +
-                        "VALUES(0,"+p_iIdEmpresa+","+p_iIdCategoria+","+p_iIdDepartamento+",'"+p_strHoradeSalida+"','"+p_strFecha+"','"+p_strHoradeRetorno+"','"+p_strPuntodeEncuentro+"',"+p_iPrecio+");";
+        String strSql = "INSERT INTO tourdatabase.evento(id,idempresa,idcategoria,iddepartamento,horadesalida,fecha,horaderetorno,puntodeencuentro,precio,cupo,cuposrestantes)" +
+                        "VALUES(0,"+p_iIdEmpresa+","+p_iIdCategoria+","+p_iIdDepartamento+",'"+p_strHoradeSalida+"','"+p_strFecha+"','"+p_strHoradeRetorno+"','"+p_strPuntodeEncuentro+"',"+p_iPrecio+","+iCupo+", "+iCupo+");";
         int iRows = database.executeNonQueryRows(strSql);
         return iRows;
         }
@@ -100,6 +101,7 @@ public class EventoLogic extends Logic
             String strHoradeRetorno;
             String strPuntodeEncuentro;
             int iPrecio;
+            int iCupo;
             
             try 
             {
@@ -114,7 +116,8 @@ public class EventoLogic extends Logic
                     strHoradeRetorno = CResult.getString("horaderetorno");
                     strPuntodeEncuentro = CResult.getString("puntodeencuentro");
                     iPrecio = CResult.getInt("precio");
-                    CTemp = new EventoObj(iId, iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio);
+                    iCupo = CResult.getInt("cupo");
+                    CTemp = new EventoObj(iId, iIdEmpresa, iIdCategoria, iIdDepartamento, strHoradeSalida, strFecha, strHoradeRetorno, strPuntodeEncuentro, iPrecio,iCupo,iCupo);
                 }
             } 
             catch (SQLException ex) 
@@ -126,7 +129,7 @@ public class EventoLogic extends Logic
         return CTemp;
     }
         public int ActualizarEvento(int p_iId,int p_iIdEmpresa ,int p_iIdCategoria, int p_iIdDepartamento, String p_strHoradeSalida,
-            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio){
+            String p_strFecha, String p_strHoradeRetorno, String p_strPuntodeEncuentro, int p_iPrecio, int p_iCupo){
            DatabaseX database = getDatabase(); 
            String strSql = "UPDATE tourdatabase.evento " +
                            "SET " +                    
@@ -138,7 +141,9 @@ public class EventoLogic extends Logic
                            "fecha = '"+p_strFecha+"'," +
                            "horaderetorno = '"+p_strHoradeRetorno+"'," +
                            "puntodeencuentro ='"+p_strPuntodeEncuentro+"'," +
-                           "precio = "+p_iPrecio+" " +                   
+                           "precio = "+p_iPrecio+","+
+                           "cupo = "+p_iCupo+","+
+                           "cuposrestantes = "+p_iCupo+" "+                   
                            "WHERE id = "+p_iId+";";
            int iRows = database.executeNonQueryRows(strSql);
            return iRows;

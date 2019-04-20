@@ -17,7 +17,8 @@ $(document).ready(function(){
           fecha:"required",
           horaderetorno:"required",
           puntodeencuentro:"required",
-          precio:"required"
+          precio:"required",
+          cupo:"required"
       },
       messages:{
           empresa:{
@@ -36,7 +37,8 @@ $(document).ready(function(){
           fecha:"Ingrese la fecha del viaje",
           horaderetorno:"Ingrese la hora de retorno",
           puntodeencuentro:"Ingrese el punto de encuentro",
-          precio:"Ingrese el precio del viaje"
+          precio:"Ingrese el precio del viaje",
+          cupo: "Ingrese el cupo total del viaje"
       }
    }); 
 });
