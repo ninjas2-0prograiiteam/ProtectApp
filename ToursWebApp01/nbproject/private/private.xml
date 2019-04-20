@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP%20PC/Documents/GitHub/ProyectApp/ToursWebApp01/web/index.html</file>
+            <file>file:/C:/Users/HP%20PC/Documents/GitHub/ProyectApp/ToursWebApp01/src/java/tours/prograii/servlets/EventoServlet.java</file>
+            <file>file:/C:/Users/HP%20PC/Documents/GitHub/ProyectApp/ToursWebApp01/web/EventoForm.jsp</file>
+            <file>file:/C:/Users/HP%20PC/Documents/GitHub/ProyectApp/ToursWebApp01/web/EventoUpdateForm.jsp</file>
+            <file>file:/C:/Users/HP%20PC/Documents/GitHub/ProyectApp/ToursWebApp01/web/EventoNew.jsp</file>
         </group>
     </open-files>
 </project-private>

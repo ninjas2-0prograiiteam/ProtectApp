@@ -128,9 +128,9 @@ CREATE TABLE `empresa` (
   `nit` varchar(45) NOT NULL,
   `username` varchar(85) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `nodecuenta` int(11) NOT NULL,
+  `nodecuenta` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +139,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (7,'Helen','helen.9.dic@gmail.com',79399834,'253754','4524524','45345',5452),(8,'Hola','helen.9.dic',79399834,'12365478963214','20171564','12345',12368515);
+INSERT INTO `empresa` VALUES (9,'Helen','helen.9.dic@gmail.com',79399834,'87456321459632','20171564','123456','452572425421');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,4 +248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-20  0:12:48
+-- Dump completed on 2019-04-20  8:58:38
