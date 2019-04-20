@@ -42,15 +42,15 @@
             <br><br>
             
             <label>Hora de salida:</label><br>
-            <input type="text" id="horadesalida" name="horadesalida" value="<%= CEvento.getHoradeSalida() %>"/>
+            <input type="time" id="horadesalida" name="horadesalida" value="<%= CEvento.getHoradeSalida() %>"/>
             <br><br>
             
             <label>Fecha:</label><br>
-            <input type="text" id="fecha" name="fecha" value="<%= CEvento.getFecha() %>"/>
+            <input type="date" id="fecha" name="fecha" value="<%= CEvento.getFecha() %>"/>
             <br><br>
             
             <label>Hora de retorno:</label><br>
-            <input type="text" id="horaderetorno" name="horaderetorno" value="<%= CEvento.getHoradeRetorno() %>"/>
+            <input type="time" id="horaderetorno" name="horaderetorno" value="<%= CEvento.getHoradeRetorno() %>"/>
             <br><br>
             
             <label>Punto de encuentro:</label><br>
