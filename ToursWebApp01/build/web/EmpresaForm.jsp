@@ -1,50 +1,72 @@
-
-
+<%-- 
+    Document   : EmpresaForm
+    Created on : Apr 18, 2019, 9:23:37 PM
+    Author     : boris
+--%>/*
+<%@page import="java.util.Iterator"%>
+<%@page import="tours.prograii.objects.EmpresaObj"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro de empresa</title>
+        <title>Empresa Form</title>
     </head>
+    <%
+        ArrayList<EmpresaObj> CArray = 
+                (ArrayList<EmpresaObj>)request.getSession().getAttribute("empresas");
+        Iterator<EmpresaObj> iteArray = CArray.iterator();
+    %>    
     <body>
-        <h1>Registro de empresa</h1>
-        <h2>Por favor ingrese los datos de su empresa</h2>
+        <h1>Empresa</h1>
+        <br>
+        <a href="EmpresaNew.html">New Empresa</a>
+        <br><br>
+        <table>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>NIT</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Nodecuenta</th>
+        </tr>
+        <%
+            if(iteArray!=null)
+            {
+                EmpresaObj CTemp;
+                while(iteArray.hasNext())
+                {
+                    CTemp = iteArray.next();
+        %>
+                <tr>
+                    <td><%= CTemp.getId() %></td>
+                    <td><%= CTemp.getNombre() %></td>
+                    <td><%= CTemp.getEmail() %></td>
+                    <td><%= CTemp.getTelefono() %></td>
+                    <td><%= CTemp.getNit() %></td>
+                    <td><%= CTemp.getUsername() %></td>
+                    <td><%= CTemp.getPassword() %></td>
+                    <td><%= CTemp.getNodeCuenta() %></td>
+                    <td>
+                        <a href="EmpresaServlet?formid=4&id=<%= CTemp.getId() %>">
+                            update
+                        </a>
+                    </td>
+                    <td>
+                        <a href="EmpresaServlet?formid=3&id=<%= CTemp.getId() %>">
+                            delete
+                        </a>
+                    </td>
+                </tr>
+        <%
+                }
+            }
+        %>
         
-        <form>
-            <label>Nombre de la empresa:</label><br>
-            <input type="text" id="nombree" name="nombree"/>
-            <br><br>
-            
-            <label>Email de la empresa:</label><br>
-            <input type="text" id="emaile" name="emaile"/>
-            <br><br>
-            
-            <label>Teléfono de la empresa:</label><br>
-            <input type="number" id="telefonoe" name="telefonoe"/>
-            <br><br>
-            
-            <label>NIT de la empresa:</label><br>
-            <input type="number" id="nite" name="nite"/>
-            <br><br>
-            
-            <label>Nombre de usuario para la empresa:</label><br>
-            <input type="text" id="usere" name="usere"/>
-            <br><br>
-            
-            <label>Contaseña:</label><br>
-            <input type="text" id="contra" name="contra"/>
-            <br><br>
-            
-            <label>Confirme contraseña:</label><br>
-            <input type="text" id="contracon" name="contracon"/>
-            <br><br>
-            
-            <label>Número de cuenta de la empresa:</label><br>
-            <input type="number" id="numerodecuenta" name="numerodecuenta"/>
-            <br><br>
-            
-             <input type="submit" id="mysubmit" name="mysubmmit" value="Unirme"/>
-        </form>
+        </table>
     </body>
 </html>
