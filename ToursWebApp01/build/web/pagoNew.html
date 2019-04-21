@@ -7,30 +7,12 @@
               content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Nuevo Pago</h1>
+        <h1>Todas las transacciones son seguras</h1>
+        <br>
+        <a href="UsuariosServlet?formid=6">Ingresar datos para efectuar pago</a>
         <br><br>
-        
-        <form id="myform" name="myform" action="PagoServlet" method="get">
-            
-            <label>Id Usuario:</label><br>
-            <input type="number" id="IdUsuario" name="idusuario" />
-            <br><br>
-            
-            <label>No de tarjeta:</label><br>
-            <input type="number" id="NodeTarjeta" name="nodetarjeta" />
-            <br><br>
-            
-            <label>CVV:</label><br>
-            <input type="number" id="Cvv" name="cvv" />
-            <br><br>
-            
-            <label>Fecha de vencimiento:</label><br>
-            <input type="number" id="FechadeVencimiento" name="fechadevencimiento" />
-            <br><br>
-            
-            <input type="submit" id="mysubmit" name="mysubmit" value="Create"/>
-            <input type="hidden" id="formid" name="formid" value="1" />
-        </form>
+        <h2>Pagos realizados</h2>
+        <a href="PagoServlet?formid=5">Verificar</a>
         
     </body>
 </html>

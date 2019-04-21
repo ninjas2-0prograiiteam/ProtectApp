@@ -5,21 +5,19 @@ public class UsuariosObj {
     private String m_strApellido;
     private int m_iEdad;
     private int m_iDui;
-    private int m_iNit;
     private String m_strEmail;
     private String m_strUsername;
     private String m_strPassword;
     private int m_iIdDepartamento;
 
 
-    public UsuariosObj(int p_iId, String p_strNombre, String p_strApellido, int p_iEdad, int p_iDui, int p_iNit, 
+    public UsuariosObj(int p_iId, String p_strNombre, String p_strApellido, int p_iEdad, int p_iDui,  
             String p_strEmail, String p_strUsername, String p_strPassword, int p_iIdDepartamento) {
         setId(p_iId);
         setNombre(p_strNombre);
         setApellido(p_strApellido);
         setEdad(p_iEdad);
         setDui(p_iDui);
-        setNit(p_iNit);
         setEmail(p_strEmail);
         setUsername(p_strUsername);
         setPassword(p_strPassword);
@@ -67,13 +65,6 @@ public class UsuariosObj {
         m_iDui = p_iDui;
     }
 
-    public int getNit() {
-        return m_iNit;
-    }
-
-    private void setNit(int p_iNit) {
-        m_iNit = p_iNit;
-    }
 
     public String getEmail() {
         return m_strEmail;

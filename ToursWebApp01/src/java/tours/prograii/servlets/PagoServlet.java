@@ -11,14 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import tours.prograii.logic.PagoLogic;
 import tours.prograii.objects.PagoObj;
 
+
 @WebServlet(name = "PagoServlet", urlPatterns = {"/PagoServlet"})
-public class PagoServlet extends HttpServlet 
-{
+public class PagoServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
-        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) 
         {
@@ -36,20 +35,23 @@ public class PagoServlet extends HttpServlet
                 int iFechadeVencimiento = Integer.parseInt(strFechadeVencimiento);
                 
                 PagoLogic CLogic = new PagoLogic();
-                int iRows = CLogic.insertPagoRows(iIdUsuario, iNodeTarjeta, iCvv, iFechadeVencimiento);
+                int iRows = CLogic.NuevoPagoRows(iIdUsuario, iNodeTarjeta, iCvv, iFechadeVencimiento);
                 System.out.println("inser pago rows: " + iRows);
                 
-                request.getSession().setAttribute("rows", new Integer(iRows) );
+                request.getSession().setAttribute("rows", iRows );
                 response.sendRedirect("genericMessage.jsp");
             }
             
             if(strFormId.equals("2"))
             {
-                PagoLogic CLogic = new PagoLogic();
-                ArrayList<PagoObj> CArray = CLogic.getAllPagos();
+                String strId = request.getParameter("id");
+                int iId = Integer.parseInt(strId);
                 
-                request.getSession().setAttribute("pagos", CArray);
-                response.sendRedirect("pagoForm.jsp");
+                PagoLogic CLogic = new PagoLogic();
+                int iRows = CLogic.BorrarPagoRows(iId);
+                
+                request.getSession().setAttribute("pagos", iRows);
+                response.sendRedirect("genericMessage.jsp");
             }
             
             if(strFormId.equals("3"))
@@ -58,23 +60,13 @@ public class PagoServlet extends HttpServlet
                 int iId = Integer.parseInt(strId);
                 
                 PagoLogic CLogic = new PagoLogic();
-                int iRows = CLogic.borrarPagoRows(iId);
-                System.out.println("delete pago Rows " + iRows);
+                PagoObj CObj = CLogic.getPagoById(iId);
+                
+                request.getSession().setAttribute("users", CObj);
+                response.sendRedirect("pagoUpdateForm.jsp");
             }
             
             if(strFormId.equals("4"))
-            {
-                String strId = request.getParameter("id");
-                int iId = Integer.parseInt(strId);
-                
-                PagoLogic CLogic = new PagoLogic();
-                PagoObj CPago = CLogic.getPagoById(iId);
-                
-                request.getSession().setAttribute("pago", CPago);
-                response.sendRedirect("pagoUpdateForm.jsp");
-            }   
-            
-            if(strFormId.equals("5"))
             {
                 String strId = request.getParameter("Id");
                 String strIdUsuario = request.getParameter("IdUsuario");
@@ -88,17 +80,24 @@ public class PagoServlet extends HttpServlet
                 int iFechadeVencimiento = Integer.parseInt(strFechadeVencimiento);
                 
                 PagoLogic CLogic = new PagoLogic();
-                int iRows = CLogic.updatePagoRows(iId, iIdUsuario, iNodeTarjeta, iCvv, iFechadeVencimiento);
+                int iRows = CLogic.updatePagoRows(iId, iIdUsuario, iNodeTarjeta, iCvv, iFechadeVencimiento) ;
                 System.out.println("update pago rows: " + iRows);
                 
-                //send to frontend
-                request.getSession().setAttribute("rows", new Integer(iRows) );
+                request.getSession().setAttribute("rows", iRows);
                 response.sendRedirect("genericMessage.jsp");
+            }
+            
+            if(strFormId.equals("5"))
+            {
+                PagoLogic CLogic = new PagoLogic();
+                ArrayList<PagoObj> CArray = CLogic.getAllPagos();
+                
+                request.getSession().setAttribute("pagos", CArray);
+                response.sendRedirect("PagoMantenimiento.jsp");
             }
         }
     }
- 
-            
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
