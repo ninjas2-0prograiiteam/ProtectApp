@@ -66,30 +66,6 @@ INSERT INTO `categoria` VALUES (1,'Cutural','Relacionado con la cultura de El Sa
 UNLOCK TABLES;
 
 --
--- Table structure for table `cupo`
---
-
-DROP TABLE IF EXISTS `cupo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `cupo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idevento` int(11) NOT NULL,
-  `cupo` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cupo`
---
-
-LOCK TABLES `cupo` WRITE;
-/*!40000 ALTER TABLE `cupo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cupo` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `departamentos`
 --
 
@@ -130,7 +106,7 @@ CREATE TABLE `empresa` (
   `password` varchar(45) NOT NULL,
   `nodecuenta` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +115,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (9,'Helen','helen.9.dic@gmail.com',79399834,'87456321459632','20171564','123456','452572425421');
+INSERT INTO `empresa` VALUES (9,'Helen','helen.9.dic@gmail.com',793998345,'87456321459632','20171564','123456','452572425421'),(11,'1','helen.9.dic@gmail.com',79399834,'23122131231211','hola123456','123456','123453453');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,7 +139,7 @@ CREATE TABLE `evento` (
   `cupo` int(11) NOT NULL,
   `cuposrestantes` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +148,7 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` VALUES (2,1,1,11,'17:13','2019-04-27','16:12','Gasolinera Puma',4,0,0),(3,2,2,0,'7','7757','7','757',3,0,0),(5,4,2,2,'9','7757','7','757',15,0,0),(6,4,0,0,'9','156465','7','757',5,0,0),(7,4,2,4,'10','hoy','7','aqui',1,0,0),(8,4,2,4,'8','2022-03-04','03:03','hola',14,0,0),(9,8,6,7,'12:10','2019-12-09','19:16','Parque',20,0,0),(10,1,1,2,'52','727','72727','72727',8,9,9);
+INSERT INTO `evento` VALUES (2,1,3,3,'17:13','2019-04-27','16:12','Gasolinera Puma',4,20,20),(5,4,2,2,'9','7757','7','757',15,0,0),(6,4,0,0,'9','156465','7','757',5,0,0),(7,4,2,4,'10','hoy','7','aqui',1,0,0),(8,4,2,4,'8','2022-03-04','03:03','hola',14,0,0),(9,8,6,7,'12:10','2019-12-09','19:16','Parque',20,0,0),(10,1,1,2,'52','727','72727','72727',8,9,9),(12,9,3,4,'10:10','2019-04-24','15:14','hola',11,12,12);
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,11 +162,11 @@ DROP TABLE IF EXISTS `pago`;
 CREATE TABLE `pago` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idusuario` int(11) NOT NULL,
-  `no de tarjeta` int(11) NOT NULL,
+  `nodetarjeta` varchar(45) NOT NULL,
   `cvv` int(11) NOT NULL,
   `fechadevencimiento` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,6 +175,7 @@ CREATE TABLE `pago` (
 
 LOCK TABLES `pago` WRITE;
 /*!40000 ALTER TABLE `pago` DISABLE KEYS */;
+INSERT INTO `pago` VALUES (2,11,'1265478931456987',5567,56356),(3,1,'',123,1234),(8,11,'1234567891234569',370,1236);
 /*!40000 ALTER TABLE `pago` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,7 +197,7 @@ CREATE TABLE `usuarios` (
   `password` varchar(45) NOT NULL,
   `iddepartamento` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,7 +206,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (10,'Helen','Fuentes',21,954639873,'helen.9.dic@gmail.com','Helen Fuentes','12345',14),(11,'Helen','Fuentes',19,205698741,'helen.9.dic@gmail.com','Helen Fuentes','12345',1),(14,'Marta','Sandoval',48,424894149,'helen.9.dic@gmail.com','Marty','123456',12);
+INSERT INTO `usuarios` VALUES (11,'Helen','Fuentes',19,205698741,'helen.9.dic@gmail.com','Helen Fuentes','12345',1),(14,'Marta','Sandoval',48,424894149,'helen.9.dic@gmail.com','Marty','123456',12),(15,'Emely','Fuentes',30,123654789,'dcdsdcsd@fdsfvsd','dvdfvdf','1234567',12);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-20 12:56:53
+-- Dump completed on 2019-04-20 23:58:42
