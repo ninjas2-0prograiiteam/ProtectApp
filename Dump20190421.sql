@@ -139,7 +139,7 @@ CREATE TABLE `evento` (
   `cupo` int(11) NOT NULL,
   `cuposrestantes` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,9 +148,29 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` VALUES (2,1,3,3,'17:13','2019-04-27','16:12','Gasolinera Puma',4,20,20),(5,4,2,2,'9','7757','7','757',15,0,0),(6,4,0,0,'9','156465','7','757',5,0,0),(7,4,2,4,'10','hoy','7','aqui',1,0,0),(8,4,2,4,'8','2022-03-04','03:03','hola',14,0,0),(9,8,6,7,'12:10','2019-12-09','19:16','Parque',20,0,0),(10,1,1,2,'52','727','72727','72727',8,9,9),(12,9,3,4,'10:10','2019-04-24','15:14','hola',11,12,12);
+INSERT INTO `evento` VALUES (13,9,2,1,'09:11','2019-04-18','12:10','parque',10,11,11);
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `eventos`
+--
+
+DROP TABLE IF EXISTS `eventos`;
+/*!50001 DROP VIEW IF EXISTS `eventos`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `eventos` AS SELECT 
+ 1 AS `empresa`,
+ 1 AS `categoria`,
+ 1 AS `departamento`,
+ 1 AS `horadesalida`,
+ 1 AS `fecha`,
+ 1 AS `horaderetorno`,
+ 1 AS `puntodeencuentro`,
+ 1 AS `precio`,
+ 1 AS `cuposrestantes`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `pago`
@@ -217,6 +237,24 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'tourdatabase'
 --
+
+--
+-- Final view structure for view `eventos`
+--
+
+/*!50001 DROP VIEW IF EXISTS `eventos`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `eventos` AS select `empresa`.`nombre` AS `empresa`,`categoria`.`tipo` AS `categoria`,`departamentos`.`nombre` AS `departamento`,`evento`.`horadesalida` AS `horadesalida`,`evento`.`fecha` AS `fecha`,`evento`.`horaderetorno` AS `horaderetorno`,`evento`.`puntodeencuentro` AS `puntodeencuentro`,`evento`.`precio` AS `precio`,`evento`.`cuposrestantes` AS `cuposrestantes` from (((`evento` join `empresa` on((`evento`.`idempresa` = `empresa`.`id`))) join `categoria` on((`evento`.`idcategoria` = `categoria`.`id`))) join `departamentos` on((`evento`.`iddepartamento` = `departamentos`.`id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -227,4 +265,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-20 23:58:42
+-- Dump completed on 2019-04-21  2:05:51
