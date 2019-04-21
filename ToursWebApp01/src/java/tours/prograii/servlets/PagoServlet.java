@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tours.prograii.logic.PagoLogic;
+import tours.prograii.logic.UsuariosLogic;
 import tours.prograii.objects.PagoObj;
+import tours.prograii.objects.UsuariosObj;
 
 
 @WebServlet(name = "PagoServlet", urlPatterns = {"/PagoServlet"})
@@ -93,8 +95,17 @@ public class PagoServlet extends HttpServlet {
                 ArrayList<PagoObj> CArray = CLogic.getAllPagos();
                 
                 request.getSession().setAttribute("pagos", CArray);
-                response.sendRedirect("PagoMantenimiento.jsp");
+                response.sendRedirect("PagoForm.jsp");
             }
+            
+            if(strFormId.equals("6"))
+            {
+                UsuariosLogic CUsuariosLogic = new UsuariosLogic();
+                ArrayList<UsuariosObj> CUsuariosArray = CUsuariosLogic.getAllUsers();
+
+                request.getSession().setAttribute("cusuarios", CUsuariosArray);
+                response.sendRedirect("PagoNew.jsp");
+            }     
         }
     }
 

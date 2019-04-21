@@ -16,6 +16,10 @@
     %>
     <body>
         <h1>Verificar Pagos</h1>
+        
+        <br>
+        <a href="PagoServlet?formid=6">Nuevo Pago</a>
+        
         <br><br>
         <table>
         <tr>
