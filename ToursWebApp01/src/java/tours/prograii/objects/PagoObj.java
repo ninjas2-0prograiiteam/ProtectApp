@@ -4,14 +4,14 @@ public class PagoObj {
 
     private int m_iId;
     private int m_iIdUsuario;
-    private int m_iNodeTarjeta;
+    private String m_strNodeTarjeta;
     private int m_iCvv;
     private int m_iFechadeVencimiento;
 
-    public PagoObj(int p_iId, int p_iIdUsuario, int p_iNodeTarjeta, int p_iCvv, int p_iFechadeVencimiento) {
+    public PagoObj(int p_iId, int p_iIdUsuario, String p_strNodeTarjeta, int p_iCvv, int p_iFechadeVencimiento) {
         setId(p_iId);
         setIdUsuario(p_iIdUsuario);
-        setNodeTarjeta(p_iNodeTarjeta);
+        setNodeTarjeta(p_strNodeTarjeta);
         setCvv(p_iCvv);
         setFechadeVencimiento(p_iFechadeVencimiento);
     }
@@ -34,13 +34,15 @@ public class PagoObj {
         m_iIdUsuario = p_iIdUsuario;
     }
 
-    public int getNodeTarjeta() {
-        return m_iNodeTarjeta;
+    public String getNodeTarjeta() {
+        return m_strNodeTarjeta;
     }
 
-    private void setNodeTarjeta(int p_iNodeTarjeta) {
-        m_iNodeTarjeta = p_iNodeTarjeta;
+    private void setNodeTarjeta(String p_strNodeTarjeta) {
+        m_strNodeTarjeta = p_strNodeTarjeta;
     }
+
+    
 
     public int getCvv() {
         return m_iCvv;
