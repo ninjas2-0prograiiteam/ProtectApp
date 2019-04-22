@@ -112,7 +112,18 @@ public class EmpresaServlet extends HttpServlet
                 //send to frontend
                 request.getSession().setAttribute("rows", new Integer(iRows) );
                 response.sendRedirect("genericMessage.jsp");                 
-            }            
+            } 
+            
+            if(strFormId.equals("6")){
+                String strUsername = request.getParameter("usuario");
+                
+
+                EmpresaLogic ULogic = new EmpresaLogic();
+                EmpresaObj UObj = ULogic.getEmpresaByUsername(strUsername);
+                
+                request.getSession().setAttribute("empresa", UObj);
+                response.sendRedirect("MiPerfilEmpresa.jsp");
+            }
         }
     }
 

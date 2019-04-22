@@ -17,9 +17,7 @@
         
     %>
     <body>
-        <h1>Evento</h1>
-        <br>
-        <a href="EventoServlet?formid=6">Ingresar un nuevo evento</a>
+        <h1>Evento</h1>>
         <br><br>
         <table>
         <tr>

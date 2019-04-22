@@ -161,4 +161,51 @@ public class UsuariosLogic extends Logic {
         return CArray;
         
     }
+         public UsuariosObj getUsersByUsername(String  p_strUsername) 
+    {
+        //select * from travelsys.client;
+        DatabaseX database = getDatabase();
+        String strSql = "select * from tourdatabase.usuarios where username='"+p_strUsername+"' ";
+        System.out.println(strSql);
+        ResultSet CResult = database.executeQuery(strSql);
+        UsuariosObj CTemp = null;
+        
+        if(CResult!=null)
+        {
+            int iId;
+            String strNombre;
+            String strApellido;
+            int iEdad;
+            int iDui;
+            String strEmail;
+            String strUsername;
+            String strPassword;
+            int iIdDepartamento;
+            
+            try 
+            {
+                while(CResult.next())
+                {
+                    iId = CResult.getInt("id");
+                    strNombre = CResult.getString("nombre");
+                    strApellido = CResult.getString("apellido");
+                    iEdad = CResult.getInt("edad");
+                    iDui = CResult.getInt("dui");
+                    strEmail = CResult.getString("email");
+                    strUsername = CResult.getString("username");
+                    strPassword = CResult.getString("password");
+                    iIdDepartamento = CResult.getInt("iddepartamento");
+                    
+                    CTemp = new UsuariosObj(iId, strNombre, strApellido,iEdad,iDui,strEmail, strUsername, strPassword, iIdDepartamento);
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(UsuariosLogic.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return CTemp;
+        
+    }
 }

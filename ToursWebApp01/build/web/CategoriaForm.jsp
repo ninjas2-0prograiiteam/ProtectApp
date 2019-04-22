@@ -12,12 +12,12 @@
     </head>
     <%
         ArrayList<EventoViewObj> CArray = 
-                (ArrayList<EventoViewObj>)request.getSession().getAttribute("eventos");
+                (ArrayList<EventoViewObj>)request.getSession().getAttribute("eventoc");
         Iterator<EventoViewObj> iteArray = CArray.iterator();
         
     %>
     <body>
-        <h1>Evento</h1>>
+        <h1>Evento</h1>
         <br><br>
         <table>
         <tr>
@@ -58,3 +58,4 @@
         </table>
     </body>
 </html>
+

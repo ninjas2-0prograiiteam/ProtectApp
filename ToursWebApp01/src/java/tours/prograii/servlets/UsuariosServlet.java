@@ -110,6 +110,17 @@ public class UsuariosServlet extends HttpServlet {
                 request.getSession().setAttribute("users", CArray);
                 response.sendRedirect("UsuariosMaintain.jsp");
             }
+            
+            if(strFormId.equals("6")){
+                String strUsername = request.getParameter("usuario");
+                
+
+                UsuariosLogic ULogic = new UsuariosLogic();
+                UsuariosObj UObj = ULogic.getUsersByUsername(strUsername);
+                
+                request.getSession().setAttribute("users", UObj);
+                response.sendRedirect("MiPerfil.jsp");
+            }
                 }
         
     }

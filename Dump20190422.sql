@@ -28,7 +28,7 @@ CREATE TABLE `carritodecompras` (
   `idevento` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `carritodecompras` (
 
 LOCK TABLES `carritodecompras` WRITE;
 /*!40000 ALTER TABLE `carritodecompras` DISABLE KEYS */;
+INSERT INTO `carritodecompras` VALUES (1,11,9,20),(2,11,13,20);
 /*!40000 ALTER TABLE `carritodecompras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +62,7 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (1,'Cutural','Relacionado con la cultura de El Salvador'),(2,'Recreativo','Relacionado con el entertenimiento recreativo personal'),(3,'Grupos Ideológicos','Relacionado con grupos que comparten una ideología como LGBT, feministas, socialistas, entre otros.'),(4,'Deportivo','Relacionado con el deporte'),(5,'Rural','Realizados en las zonas rurales El Salvador'),(6,'Urbano','Realizado en las zonas urbanas de El Salvador'),(7,'De Aventura','Relacionado con la exploración de lugares, caminatas, canopi, escaladas, entre otros eventos'),(8,'De Negocios','Eventos para grupos de empresas'),(9,'Ecológico','Para ayudar a mejorar o limpiar zonas de El Salvador'),(10,'Religioso','Para personas que comparten una religión'),(11,'Gastronómico','Relacionado con la comida típica de El Salvador');
+INSERT INTO `categoria` VALUES (1,'Cultural','Relacionado con la cultura de El Salvadorr'),(2,'Recreativo','Relacionado con el entertenimiento recreativo personal'),(3,'Grupos Ideologicos','Relacionado con grupos que comparten una ideología como LGBT, feministas, socialistas, entre otros'),(4,'Deportivo','Relacionado con el deporte'),(5,'Rural','Realizados en las zonas rurales El Salvador'),(6,'Urbano','Realizado en las zonas urbanas de El Salvador'),(7,'De Aventura','Relacionado con la exploración de lugares, caminatas, canopi, escaladas, entre otros eventos'),(8,'De Negocios','Eventos para grupos de empresas'),(9,'Ecologico','Para ayudar a mejorar o limpiar zonas de El Salvador'),(10,'Religioso','Para personas que comparten una religión'),(11,'Gatronomico','Relacionado con la comida típica de El Salvador');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +107,7 @@ CREATE TABLE `empresa` (
   `password` varchar(45) NOT NULL,
   `nodecuenta` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +116,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (9,'Helen','helen.9.dic@gmail.com',793998345,'87456321459632','20171564','123456','452572425421'),(11,'1','helen.9.dic@gmail.com',79399834,'23122131231211','hola123456','123456','123453453');
+INSERT INTO `empresa` VALUES (11,'1','helen.9.dic@gmail.com',79399834,'23122131231211','hola123','123456','123453453'),(12,'Helen','helen.9.dic@gmail.com',79399834,'13215445465465','20171564','12345','12365478');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +140,7 @@ CREATE TABLE `evento` (
   `cupo` int(11) NOT NULL,
   `cuposrestantes` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +149,7 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` VALUES (13,9,2,1,'09:11','2019-04-18','12:10','parque',10,11,11);
+INSERT INTO `evento` VALUES (13,9,2,1,'09:11','2019-04-18','12:10','parque',10,11,11),(14,12,1,10,'13:13','2019-04-19','13:12','parque',15,14,14),(15,12,3,2,'08:08','2019-04-06','09:50','Gasolinera Puma',15,16,16);
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,6 +174,47 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `miseventos`
+--
+
+DROP TABLE IF EXISTS `miseventos`;
+/*!50001 DROP VIEW IF EXISTS `miseventos`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `miseventos` AS SELECT 
+ 1 AS `empresa`,
+ 1 AS `username`,
+ 1 AS `categoria`,
+ 1 AS `departamento`,
+ 1 AS `horadesalida`,
+ 1 AS `fecha`,
+ 1 AS `horaderetorno`,
+ 1 AS `puntodeencuentro`,
+ 1 AS `precio`,
+ 1 AS `cuposrestantes`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `miseventosusuario`
+--
+
+DROP TABLE IF EXISTS `miseventosusuario`;
+/*!50001 DROP VIEW IF EXISTS `miseventosusuario`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `miseventosusuario` AS SELECT 
+ 1 AS `username`,
+ 1 AS `categoria`,
+ 1 AS `departamento`,
+ 1 AS `horadesalida`,
+ 1 AS `fecha`,
+ 1 AS `horaderetorno`,
+ 1 AS `puntodeencuentro`,
+ 1 AS `precio`,
+ 1 AS `cuposrestantes`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `pago`
 --
 
@@ -186,7 +228,7 @@ CREATE TABLE `pago` (
   `cvv` int(11) NOT NULL,
   `fechadevencimiento` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,7 +237,7 @@ CREATE TABLE `pago` (
 
 LOCK TABLES `pago` WRITE;
 /*!40000 ALTER TABLE `pago` DISABLE KEYS */;
-INSERT INTO `pago` VALUES (2,11,'1265478931456987',5567,56356),(3,1,'',123,1234),(8,11,'1234567891234569',370,1236);
+INSERT INTO `pago` VALUES (3,1,'',123,1234),(9,11,'1234567893214569',123,1234),(10,11,'120365789632104',123,1235),(11,11,'165461231',32165,3145);
 /*!40000 ALTER TABLE `pago` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,7 +259,7 @@ CREATE TABLE `usuarios` (
   `password` varchar(45) NOT NULL,
   `iddepartamento` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +268,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (11,'Helen','Fuentes',19,205698741,'helen.9.dic@gmail.com','Helen Fuentes','12345',1),(14,'Marta','Sandoval',48,424894149,'helen.9.dic@gmail.com','Marty','123456',12),(15,'Emely','Fuentes',30,123654789,'dcdsdcsd@fdsfvsd','dvdfvdf','1234567',12);
+INSERT INTO `usuarios` VALUES (11,'Helen','Fuentes',19,205698741,'helen.9.dic@gmail.com','Helen Fuentes','12345',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -255,6 +297,42 @@ UNLOCK TABLES;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `miseventos`
+--
+
+/*!50001 DROP VIEW IF EXISTS `miseventos`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `miseventos` AS select `empresa`.`nombre` AS `empresa`,`empresa`.`username` AS `username`,`categoria`.`tipo` AS `categoria`,`departamentos`.`nombre` AS `departamento`,`evento`.`horadesalida` AS `horadesalida`,`evento`.`fecha` AS `fecha`,`evento`.`horaderetorno` AS `horaderetorno`,`evento`.`puntodeencuentro` AS `puntodeencuentro`,`evento`.`precio` AS `precio`,`evento`.`cuposrestantes` AS `cuposrestantes` from (((`evento` join `empresa` on((`evento`.`idempresa` = `empresa`.`id`))) join `categoria` on((`evento`.`idcategoria` = `categoria`.`id`))) join `departamentos` on((`evento`.`iddepartamento` = `departamentos`.`id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `miseventosusuario`
+--
+
+/*!50001 DROP VIEW IF EXISTS `miseventosusuario`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `miseventosusuario` AS select `usuarios`.`username` AS `username`,`categoria`.`tipo` AS `categoria`,`departamentos`.`nombre` AS `departamento`,`evento`.`horadesalida` AS `horadesalida`,`evento`.`fecha` AS `fecha`,`evento`.`horaderetorno` AS `horaderetorno`,`evento`.`puntodeencuentro` AS `puntodeencuentro`,`evento`.`precio` AS `precio`,`evento`.`cuposrestantes` AS `cuposrestantes` from ((((`evento` join `carritodecompras` on((`carritodecompras`.`idevento` = `evento`.`id`))) join `categoria` on((`categoria`.`id` = `evento`.`idcategoria`))) join `departamentos` on((`departamentos`.`id` = `evento`.`iddepartamento`))) join `usuarios` on((`carritodecompras`.`idusuario` = `usuarios`.`id`))) where (`usuarios`.`username` = 'Helen Fuentes') */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -265,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-21  2:05:51
+-- Dump completed on 2019-04-22  0:28:11

@@ -147,7 +147,52 @@ public class EmpresaLogic extends Logic
         
     }
     
-    
+     public EmpresaObj getEmpresaByUsername(String p_strUsername) 
+    {
+        //select * from travelsys.client;
+        DatabaseX database = getDatabase();
+        String strSql = "select * from tourdatabase.empresa where username='"+p_strUsername+"' ";
+        System.out.println(strSql);
+        ResultSet CResult = database.executeQuery(strSql);
+        EmpresaObj CTemp = null;
+        
+        if(CResult!=null)
+        {
+            int iId;
+            String strNombre;
+            String strEmail;
+            int iTelefono;
+            String strNit;
+            String strUsername;
+            String strPassword;
+            String strNodecuenta;
+            
+            try 
+            {
+                while(CResult.next())
+                {
+                    iId = CResult.getInt("id");
+                    strNombre = CResult.getString("nombre");
+                    strEmail = CResult.getString("email");
+                    iTelefono = CResult.getInt("telefono");
+                    strNit = CResult.getString("nit");
+                    strUsername = CResult.getString("username");
+                    strPassword = CResult.getString("password");
+                    strNodecuenta = CResult.getString("nodecuenta");
+                    
+                    //String strNombre,String strEmail, int iTelefono,int iNit,String strUsername,String strPassword,int iNodecuenta
+                    CTemp = new EmpresaObj(iId, strNombre, strEmail, iTelefono, strNit, strUsername, strPassword, strNodecuenta);
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(EmpresaLogic.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return CTemp;
+        
+    }
     
 }
     
