@@ -1,0 +1,93 @@
+package tours.prograii.objects;
+
+public class EmpresaObj {
+    private int m_iId;
+    private String m_strNombre;
+    private String m_strEmail;
+    private int m_iTelefono;
+    private String m_strNit;
+    private String m_strUsername;
+    private String m_strPassword;
+    private String m_strNodeCuenta;
+
+    public EmpresaObj(int p_iId, String p_strNombre, String p_strEmail, int p_iTelefono, String p_strNit, 
+            String p_strUsername, String p_strPassword, String p_strNodeCuenta) {
+        setId(p_iId);
+        setNombre(p_strNombre);
+        setEmail(p_strEmail);
+        setTelefono(p_iTelefono);
+        setNit(p_strNit);
+        setUsername(p_strUsername);
+        setPassword(p_strPassword);
+        setNodeCuenta(p_strNodeCuenta);
+    }
+    
+    
+
+    public int getId() {
+        return m_iId;
+    }
+
+    private void setId(int p_iId) {
+        m_iId = p_iId;
+    }
+
+    public String getNombre() {
+        return m_strNombre;
+    }
+
+    private void setNombre(String p_strNombre) {
+        m_strNombre = p_strNombre;
+    }
+
+    public String getEmail() {
+        return m_strEmail;
+    }
+
+    private void setEmail(String p_strEmail) {
+        m_strEmail = p_strEmail;
+    }
+
+    public int getTelefono() {
+        return m_iTelefono;
+    }
+
+    private void setTelefono(int p_iTelefono) {
+        m_iTelefono = p_iTelefono;
+    }
+
+    public String getNit() {
+        return m_strNit;
+    }
+
+    private void setNit(String p_strNit) {
+        m_strNit = p_strNit;
+    }
+
+
+    public String getUsername() {
+        return m_strUsername;
+    }
+
+    private void setUsername(String p_strUsername) {
+        m_strUsername = p_strUsername;
+    }
+
+    public String getPassword() {
+        return m_strPassword;
+    }
+
+    private void setPassword(String p_strPassword) {
+        m_strPassword = p_strPassword;
+    }
+
+    public String getNodeCuenta() {
+        return m_strNodeCuenta;
+    }
+
+    private void setNodeCuenta(String p_strNodeCuenta) {
+        m_strNodeCuenta = p_strNodeCuenta;
+    }
+    
+    
+}

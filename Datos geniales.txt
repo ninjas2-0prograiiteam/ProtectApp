@@ -1,0 +1,197 @@
+7 DATOS POR TABLA…
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Santiago', 'Monge',18,85336734, 'santi@gmail.com', 'santm', 'santm99', '8');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Fernando', 'Cifuentes', 20,764375324, 'fer@gmail.com', 'fern', 'fern01', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Helena', 'De Avalor',35,876478654, 'helenadeavalor@gmail.com', 'helen', 'helena54', '6');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Simon', 'Simonetti',29,764986543, 'simonetti@gmail.com ', 'simonn', 'simon467', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Julian', 'Fuentes',64,785437689, 'julian@gmail.com ', 'julianf', 'julian87', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Ramon', 'Alberto',24,678956456, 'ramon@gmail.com ', 'ramon1', 'ramon12345', '15');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Valeria', 'Solano',43,657865434, 'valeri@gmail.com', 'valeri', 'valeri12345', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Antonio', 'Manzanares',65,76545678, 'manzano@gmail.com ', 'manzanares', 'manzanares12345', '12');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Jean', 'Alexander',34,765234123, 'jean@gmail.com ', 'jean1', 'jean12345', '2');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Diego', 'Torres',27,947239745, 'diego@gmail.com ', 'diego23', 'diego1234', '3');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Rodrigo', 'Alejandro',28,76459870, 'rodrigo@gmail.com ', 'rodrii', 'rodri123', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Gabriel', 'Amaya',35,678950909, 'gabri@gmail.com ', 'gabu', 'gabi87', '10');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Daniela', 'María',29,876523908, 'daniela@gmail.com ', 'dani2', 'dani12345', '4');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Javier', 'Amaya',25,876589765, 'javi@gmail.com ', 'javiavi', 'javi12345', '10');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Karla', 'Martinez',25,783456893, 'karla@gmail.com', 'karlam', 'karlam123', '9');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Jesis', 'Barahona',18,786543456, 'yisus', 'yisus23', '', '8');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Adriana', 'Paz',36,784530950, 'adrip@gmail.com ', 'adrip', 'adrip123', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Ivan', 'Hernandez',28,67856789, 'ivan@gmail.com ', 'ivanx', 'ivanx123', '6');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Marcelo', 'Cardenal',32,764537654, 'marce@gmail.com ', 'marc', 'marc123', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Natia', 'Maria',65,543678973, 'nati@gmail.com ', 'natinatasha', 'natitasha123', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Jose', 'Romero',34,845632893, '', '', '', '15');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Ernesto', 'Orellana',20,678564567, 'ernestop@gmail.com ', 'ernestop', 'ernst123', '13');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Benjamin', 'Guardado',26,876789545, 'benja@gmail.com ', 'benjan', 'benjan23', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Dinora', 'Alexandra',28,786545678, 'dini@gmail.com ', 'dina', 'dina24', '4');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Abril', 'Amaya',25,878654345, 'abri@gmail.com ', 'abri23', 'abri89', '1');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Marta', 'Penado',36,864789345, 'marta@gmail.com ', 'marti', 'martilu', '7');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Yulisa', 'Pacheco',45, 678456123, 'yuli@gmail.com ', 'yulis', 'yulis76', '9');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Nathan', 'Cabrera', 987567456, 'nathan@gmail.com ', 'naty', 'naty78', '8');
+INSERT INTO `tourdatabase`.`usuarios`(`id`,`nombre`,`apellido`,`edad`,`dui`,`email`,`username`,
+`password`,`iddepartamento`)
+VALUES(0,'Marcos', 'Duran',37,875634098, 'marco@gmail.com ', 'marcos', 'marcos98', '7');
+
+EMPRESA:
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'TravelSV', 'travelsv@hotmail.com', '25260000', '12422340583245', 'travelsv', '12345', '54321');
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'CheapTrips', 'ctrips@hotmail.com', '22240000', '12422343283245', 'ctrips', '12345', '24680');
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'Viajes503', 'v503@gmail.com', '22230102', '12422340587564', 'v503', '12345', '1357');
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'TourTrips', 'ttrips@hotmail.com', '22577777', '75856340587564', 'ttrips', '12345', '3579');
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'BuenViajeSV', 'buenviajesv@yahoo.com', '22120000', '90042340587564', 'bviajesv', '12345', '12300');
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'SalvadorXP', 'salvadorxp@gmail.com', '22253303', '10042340587564', 'salvadorxp', '12345', '92135');
+INSERT INTO `tourdatabase`.`empresa`(`id`,`nombre`,`email`,`telefono`,`nit`,`username`,
+`password`,`nodecuenta`)
+VALUES(0,'GuanacoTour', 'gtour@hotmail.com', '26610400', '75500140587564', 'gtour', '12345', '30677');
+
+
+
+DEPARTAMENTOS:
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'La Paz');
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'Santa Ana');
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'San Salvador');
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'La Libertad');
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'San Miguel');
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'Sonsonate');
+INSERT INTO `tourdatabase`.`departamentos`(`id`,`nombre`)
+VALUES(0,'Chalatenango');
+
+CATEGORIA:
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'Cultural','Relacionado con la cultura de El Salvador');
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'Rurales','Relacionado con zonas rurales');
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'De Aventura','Relacionado con actividades entretenidas en sitios de El Salvador');
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'Ecologico','Relacionado con el medio ambiente');
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'Urbano','Relacionado con zonas rurales');
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'Ecologico','Relacionado con el medio ambiente');
+INSERT INTO `tourdatabase`.`categoria`(`id`,`tipo`,`descripcion`)
+VALUES(0,'Cultural','Relacionado con la cultura de El Salvador');
+
+
+
+CARRITO DE COMPRAS:
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'1','1','50'); 
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'2','2','75');
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'3','3','180');
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'4','4','68');
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'5','5','25');
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'6','6','50');
+INSERT INTO `tourdatabase`.`carritodecompras`(`id`,`idusuario`,`idevento`,`total`)
+VALUES(0,'7','7','100');
+
+PAGO:
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'1','100200300','112','0420');
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'2','700600500','246','0622');
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'3','555999777','975','1121');
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'4','246000999','000','0123');
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'5','0102030405','666','0620');
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'6','0122537777','468','1221');
+INSERT INTO `tourdatabase`.`pago`(`id`,`idusuario`,`nodetarjeta`,`cvv`,`fechadevencimiento`)
+VALUES(0,'7','0102030405','012','0220');
+
+EVENTO:
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'1','1','1','06:00','2019-05-10','18:00','Parque central','10','5','3');
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'2','2','2','05:00','2019-06-15','20:00','Plaza','25','3','7');
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'3','3','3','05:00','2019-06-20','18:00','Gasolinera','20','9','1');
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'4','4','4','08:00','2019-06-30','21:00','Avenida Roosevelt','17','4','11');
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'5','5','5','04:00','2019-07-03','20:00','Gasolinera Puma','25','1','14');
+
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'6','6','6','04:00','2019-07-03','20:00','Catedral','25','2','18');
+INSERT INTO `tourdatabase`.`evento`(`id`,`idempresa`,`idcategoria`,`iddepartamento`,`horadesalida`,`fecha`,`horaderetorno`,`puntodeencuentro`,`precio`,`cupo`,`cuposrestantes`)
+VALUES(0,'7','7','7','09:00','2019-07-03','23:00','Centro Comercial X','20','5','13');
+

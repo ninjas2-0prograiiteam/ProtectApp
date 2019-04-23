@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 50px;
+}
+
+/* Clear floats */
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+/* 2/3 column */
+.column-img {
+  float: left;
+  width: 33%;
+  padding: 40px;
+  
+}
+
+/* 1/3 column */
+.column-text {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+/* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+@media screen and (max-width: 1000px) {
+  .column-img,
+  .column-text {
+    width: 100%;
+    text-align: center;
+  }
+}
